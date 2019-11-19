@@ -44,7 +44,7 @@ main{
 
 #list-container .list_item{ 
     display: flex; 
-    justify-content: center;
+    justify-content: space-around;
     background: lightslategray; 
     padding: 0.6rem 0; 
     border-bottom: 1px solid black; 

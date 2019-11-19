@@ -11,7 +11,7 @@ let addTodo = () => {
     todos.push(newTodo);
     tDisplay = document.createElement("li");
     tDisplay.className += "list_item";
-    tDisplay.innerHTML += newTodo;
+    tDisplay.innerHTML += newTodo + '<span id="del_button"> DEL</span>';
     todoDisplay.appendChild(tDisplay);
     todoInput.value = "";
     todoItemDisplay = document.querySelectorAll("li");
@@ -30,7 +30,6 @@ let delTodo = () => {
         console.log("removed " + dTodo); 
       }
     } 
-
   }
 };
 
