@@ -1,48 +1,38 @@
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
-     Version: 0.35
+     Version: 1.35
      Purpose: Making a simple Todo List app, just flexing a few muscles */
 
-let addTodo = () => {
-  if (todoInput.value == "") prompt("Please enter a Todo first! ");
-  else {
-    newTodo = todoInput.value;
-    todos.push(newTodo);
-    tDisplay = document.createElement("li");
-    tDisplay.className += "list_item";
-    tDisplay.innerHTML += newTodo + '<span id="del_button"> DEL</span>';
-    todoDisplay.appendChild(tDisplay);
-    todoInput.value = "";
-    todoItemDisplay = document.querySelectorAll("li");
+ 
+//function definitions
+let add = () => {
+  //placed the user input string into variable
+  newTodo = todo_input.value;   
+
+  //created new li element with todo inside + self-destruct button
+  list_item = document.createElement('li');  
+  list_item.innerHTML = newTodo + '<button class="del_btn"> - </button>'  
+  
+  //attach todo to list body
+  todo_list.appendChild(list_item); 
+ 
+  //reset user input 
+  todo_input.value = "";  
+} 
+let del = (e) => {
+  if(e.target && e.target.className == "del_btn"){ 
+    event.target.parentNode.remove();
   }
-};
-let delTodo = () => {
-  if (todos.length == 0) {
-    prompt("Todo list is empty! ");
-  } else { 
-    dTodo = prompt("Please Enter the todo to be deleted"); 
-    let i;
-    for(i = 0; i < todos.length; i++){
-      if(todos[i] == dTodo){
-        todos.splice(i,1);  
-        todoDisplay.childNodes[++i].remove(); 
-        console.log("removed " + dTodo); 
-      }
-    } 
-  }
-};
+}
 
-let todos = [];
-let newTodo;
+//variable declarations
+let add_btn = document.getElementById('add_todo_btn'); 
+let todo_input = document.getElementById('todo_input');    
+let todo_list = document.getElementById('list'); 
 
-let tDisplay;
-let todoInput = document.getElementById("list-input");
-let todoDisplay = document.getElementById("list");
-let todoItemDisplay = document.querySelectorAll("li");
 
-let addBtn = document.getElementById("add_button");
-let delBtn = document.getElementById("del_button");
+//event listener(s)
+add_btn.addEventListener('click',add); 
+todo_list.addEventListener('click',del);
 
-addBtn.addEventListener("click", addTodo);
-delBtn.addEventListener("click", delTodo);
