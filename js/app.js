@@ -1,7 +1,7 @@
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
-     Version: 1.55
+     Version: 1.85
      Purpose: Making a simple Todo List app, just flexing a few muscles */
 
 //function definitions
