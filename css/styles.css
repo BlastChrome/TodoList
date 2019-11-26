@@ -34,22 +34,23 @@ main{
     align-items: center;
     background: rgb(247, 219, 219); 
     height: 100vh;
-}  
+}   
+
 
 #list_body{
     display: flex; 
     flex-direction: column; 
-    background: rgb(248, 205, 205);   
     border-radius: 3%;
     width: 65%;  
     margin-top: 0.3rem;
     padding: 0.3rem;
 }  
 #list li{
- display: flex;  
- margin: 0.7rem; 
+ display: flex;   
  /* border-bottom: 1px dashed; */
- justify-content: space-between;
+ justify-content: space-between; 
+ padding: 0.3rem;
+ background: rgb(248, 205, 205);  
 }
 
 /* MAIN END */
