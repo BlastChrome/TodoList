@@ -1,7 +1,7 @@
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
-     Version: 1.35 
+     Version: 1.55 
      Purpose: Making a simple Todo List app, just flexing a few muscles */ 
 
 /* GLOBAL */
@@ -16,6 +16,36 @@ ul{
 }
 
 /* GLOBAL END */ 
+ 
+/* MAIN */  
+header{
+    display: flex; 
+    justify-content: center;
+}
+main{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    background: rgb(231, 231, 231); 
+    height: 100vh;
+}  
 
+#list_body{
+    display: flex; 
+    flex-direction: column; 
+    background: rgb(240, 240, 240);   
+    border-radius: 6%;
+    width: 50%;  
+    margin-top: 0.3rem;
+    padding: 0.3rem;
+}  
+#list li{
+ display: flex;  
+ margin: 0.7rem; 
+ border-bottom: 1px dashed;
+ justify-content: space-between;
+}
+
+/* MAIN END */
 
 
