@@ -1,26 +1,27 @@
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
-     Version: 1.85
+     Version: 1.90
      Purpose: Making a simple Todo List app, just flexing a few muscles */
 
 //function definitions
-let add = e => {
+let add = e => { 
+  //input validation
   if (e.keyCode === 13 || e.target == add_btn) {
     if (todo_input.value == "") 
       alert("please enter a todo first! ");
-    else {
+    else { 
       //placed the user input string into variable
-      newTodo = todo_input.value;
+      newTodo = todo_input.value; 
 
       //created new li element with todo inside + self-destruct button
       list_item = document.createElement("li");
-      list_item.innerHTML = newTodo + '<i class="fas fa-trash"></i>';
-
+      list_item.innerHTML = newTodo + '<i class="fas fa-trash"></i>'; 
+      
       //attach todo to list body
-      todo_list.appendChild(list_item);
-
-      //reset user input
+      todo_list.appendChild(list_item); 
+    
+      //reset user input text field
       todo_input.value = "";
     }
   }
@@ -32,13 +33,40 @@ let del = e => {
     event.target.parentNode.remove();
   }
 };
+let clear = e =>{
+  if(todo_list.childElementCount < 1)
+    alert("list empty!");  
+  else{ 
+    do{
+      answer = prompt("this action will delete the ENTIRE todo list, will you proceed?(Y/N)"); 
+      if(answer === 'y' || answer === 'Y'){
+        todo_list.innerHTML = '';   
+        alert("deletion complete! "); 
+        break;
+      }
+      else if( answer === 'n' || answer === 'N'){
+        alert("OK!"); 
+        break;
+      } 
+      else {
+        if(answer == '') 
+          alert("Nigga did i say you coud write nothing??"); 
+        else
+          alert("Nigga did i say you coud write " + answer + "??"); 
+        alert('now do it again, dumbass!');
+      } 
+    } while(answer != 'Y' || answer != 'y' || answer != 'n' || answer != 'N');
+  }
+}
 
-//variable declarations
-let add_btn = document.getElementById("add_todo_btn");
+//variable declarations 
+let add_btn = document.getElementById("add_todo_btn"); 
+let clear_btn = document.getElementById("clear_todo_btn");
 let todo_input = document.getElementById("todo_input");
 let todo_list = document.getElementById("list");
 
 //event listener(s)
-add_btn.addEventListener("click", add);
+add_btn.addEventListener("click", add); 
 todo_input.addEventListener("keydown", add);
+clear_btn.addEventListener('click',clear);
 todo_list.addEventListener("click", del);
