@@ -1,7 +1,7 @@
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
-     Version: 1.91
+     Version: 1.92
      Purpose: Making a simple Todo List app, just flexing a few muscles */
 
 /* GLOBAL */
@@ -51,6 +51,13 @@ main {
   justify-content: space-between;
   padding: 0.5rem;
   background: rgb(248, 205, 205);
+} 
+
+ i{
+ margin-left: .5rem;
+} 
+.btn:hover{
+    color: rgb(223, 130, 130);
 }
 
 /*  MAIN, HEADER, BODY END */

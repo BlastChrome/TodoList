@@ -1,7 +1,7 @@
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
-     Version: 1.91
+     Version: 1.92
      Purpose: Making a simple Todo List app, just flexing a few muscles */
 
 //function definitions
@@ -14,11 +14,13 @@ let add = e => {
       //placed the user input string into variable
       newTodo = todo_input.value; 
 
-      //created new li element with todo inside,del-btn, and edit-btn;
+      //created new li element with todo text,del-btn,and edit-btn;
       list_item = document.createElement("li"); 
-      list_actions = document.createElement('div');
-      list_item.innerHTML = newTodo + '<div><i class="far fa-edit"> </i>'
-                                    + '<i class="fas fa-trash"></i> </div>'; 
+      list_actions = document.createElement('div'); 
+      list_actions.className += "list_actions";
+      list_item.innerHTML = newTodo + '<div><i class="far fa-edit btn"> </i>'
+                                    + '<i class="fas fa-trash btn"></i> </div>';  
+      
       
       //attach todo to list body
       todo_list.appendChild(list_item); 
@@ -30,7 +32,7 @@ let add = e => {
 };
 let del = e => {
   //finds event using event delegation
-  if (e.target && e.target.className == "fas fa-trash") {
+  if (e.target && e.target.className == "fas fa-trash btn") {
     //removes the parent li element
     event.target.parentNode.parentNode.remove();
   }
