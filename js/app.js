@@ -1,7 +1,7 @@
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
-     Version: 1.90
+     Version: 1.91
      Purpose: Making a simple Todo List app, just flexing a few muscles */
 
 //function definitions
@@ -14,9 +14,11 @@ let add = e => {
       //placed the user input string into variable
       newTodo = todo_input.value; 
 
-      //created new li element with todo inside + self-destruct button
-      list_item = document.createElement("li");
-      list_item.innerHTML = newTodo + '<i class="fas fa-trash"></i>'; 
+      //created new li element with todo inside,del-btn, and edit-btn;
+      list_item = document.createElement("li"); 
+      list_actions = document.createElement('div');
+      list_item.innerHTML = newTodo + '<div><i class="far fa-edit"> </i>'
+                                    + '<i class="fas fa-trash"></i> </div>'; 
       
       //attach todo to list body
       todo_list.appendChild(list_item); 
@@ -30,7 +32,7 @@ let del = e => {
   //finds event using event delegation
   if (e.target && e.target.className == "fas fa-trash") {
     //removes the parent li element
-    event.target.parentNode.remove();
+    event.target.parentNode.parentNode.remove();
   }
 };
 let clear = e =>{
@@ -57,7 +59,11 @@ let clear = e =>{
       } 
     } while(answer != 'Y' || answer != 'y' || answer != 'n' || answer != 'N');
   }
-}
+}; 
+
+let edit = e =>{
+
+};
 
 //variable declarations 
 let add_btn = document.getElementById("add_todo_btn"); 
