@@ -61,11 +61,14 @@ let edit = e => {
   //checks for edit btn class
   if (e.target && e.target.className == "far fa-edit btn") { 
     // redo is set to the first li element(the todo <p></p>);
-    redo = e.target.parentNode.parentNode.firstElementChild;
+    redo = e.target.parentNode.parentNode.firstElementChild; 
+    redoN = redo.textContent;
     do {
       redo.textContent = prompt("Edit " + redo.textContent);
-      if (redo.textContent.length > 27 || redo.textContent.length < 1)
-        alert("LMAO THATS WAY TO LONG/SHORT YOU FUCK!");
+      if (redo.textContent.length > 27 || redo.textContent.length < 1){
+        alert("LMAO THATS WAY TO LONG/SHORT YOU FUCK!"); 
+        redo.textContent = redoN; 
+      }
     } while (redo.textContent.length > 27);
   }
 };
