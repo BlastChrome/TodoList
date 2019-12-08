@@ -53,6 +53,9 @@ main {
   background: rgb(248, 205, 205);
 } 
 
+#list li p{
+  margin: 0;
+}
  i{
  margin-left: .5rem;
 } 
