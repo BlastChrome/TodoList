@@ -28,59 +28,80 @@ ul {
 /* MAIN, HEADER, BODY */
 body {
   font-family: 'Catamaran', Arial, Helvetica, sans-serif;
-
   background: rgb(255, 241, 241); 
   background: var(--gradient-1); 
   background: var(--gradient-2); 
+}
 
-} 
 h1{
   color: white;  
   font-weight: 100; 
-  font-size: 3rem;
-  
+  font-size: 3rem;   
+  margin: 0; 
+  padding: 0;
 }
+
+
 header {
   display: flex;
   justify-content: center;
 }
 main {
-  padding: 1.2rem;
-  border-radius: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 100vh; 
+
+} 
+.container{
+  width: 60vw;
+}
+
+#todo_input{
+  
+  height: 3vh; 
+  padding: 1.5rem; 
+  font-size: 1.2rem; 
+  color: #929292;
+
 }
 
 #list_body{
   display: flex;
   flex-direction: column;
-  border-radius: 5%;
-  width: 85%;
-  margin-top: 0.3rem;
-  padding: 0.6rem;
+  /* border-radius: 5%; */
+  /* width: 70%; */ 
+  width: 40ww;
+  margin-top: 1.0rem; 
+  padding: 1rem;
+  /* padding: 0.6rem; */
 }
 #list li {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
-  background: rgb(248, 205, 205); 
-  border-radius: 2%;
+  background: white;
+  border-radius: 2px; 
+  padding: 0.8rem; 
+  margin-top: 1.0rem;
 }  
 
-#list li:nth-of-type(even) {
-  background: rgb(253, 187, 187);
-}
 
 #list li p{
   margin: 0;
 }
+
  i{
- margin-left: .5rem;
+ margin-left: .5rem; 
+ color: white;
 } 
 .btn:hover{
     color: rgb(223, 130, 130);
 }
+.fa-edit{
+  background: #21DD70; 
 
+} 
+.fa-trash{
+  background: #DD2121;
+}
 /*  MAIN, HEADER, BODY END */
