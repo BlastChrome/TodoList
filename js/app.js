@@ -4,7 +4,6 @@
      Version: 1.92
      Purpose: Making a simple Todo List app, just flexing a few muscles */
 
-
 //function definitions
 let add = e => {
   //input validation
@@ -37,16 +36,16 @@ let clear = () => {
   //checks to see if the list is already empty
   if (todo_list.childElementCount < 1) alert("list empty!");
   else {
-    do { 
+    do {
       answer = prompt(
         "this action will delete the ENTIRE todo list, will you proceed?(Y/N)"
-      ); 
-      //final deletion confirmation 
+      );
+      //final deletion confirmation
       if (answer === "y" || answer === "Y") {
         todo_list.innerHTML = "";
         alert("deletion complete! ");
         break;
-      } else if (answer === "n" || answer === "N") {
+      } else if (answer === "n" || answer === "N" || answer == '') {
         alert("OK!");
         break;
       } else {
@@ -59,15 +58,20 @@ let clear = () => {
 };
 let edit = e => {
   //checks for edit btn class
-  if (e.target && e.target.className == "far fa-edit btn") { 
+  if (e.target && e.target.className == "far fa-edit btn") {
     // redo is set to the first li element(the todo <p></p>);
-    redo = e.target.parentNode.parentNode.firstElementChild; 
+    redo = e.target.parentNode.parentNode.firstElementChild;
     redoN = redo.textContent;
     do {
       redo.textContent = prompt("Edit " + redo.textContent);
-      if (redo.textContent.length > 27 || redo.textContent.length < 1){
-        alert("LMAO THATS WAY TO LONG/SHORT YOU FUCK!"); 
-        redo.textContent = redoN; 
+      if (redo.textContent.length > 27 || redo.textContent.length < 1) {
+        if (redo.textContent.length > 27) {
+          alert("LMAO THATS WAY TO LONG YOU FUCK!");
+          redo.textContent = redoN;
+        } else if (redo.textContent.length < 1){
+          alert("LMAO THATS WAY TO SHORT YOU FUCK!");
+          redo.textContent = redoN;
+        }
       }
     } while (redo.textContent.length > 27);
   }
@@ -89,9 +93,8 @@ let todo_list = document.getElementById("list");
 //event listener(s)
 add_btn.addEventListener("click", add);
 todo_input.addEventListener("keydown", add);
-clear_btn.addEventListener("click", clear); 
+clear_btn.addEventListener("click", clear);
 
 //todo item(s) listener(s)
 todo_list.addEventListener("click", del);
-todo_list.addEventListener("click", edit); 
-
+todo_list.addEventListener("click", edit);

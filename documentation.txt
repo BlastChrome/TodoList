@@ -8,4 +8,6 @@ should be able to cross out finished todos
 should be to completely clear a list in one button! 
 
 //TODO - add a quantity form - idea given by rocky
-users should be able to specify a number for each item!
+users should be able to specify a number for each item! 
+
+//TODO - ugly as SIN, get better colors

@@ -41,7 +41,7 @@ main {
 #list_body{
   display: flex;
   flex-direction: column;
-  border-radius: 3%;
+  border-radius: 5%;
   width: 85%;
   margin-top: 0.3rem;
   padding: 0.6rem;
@@ -50,8 +50,13 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
-  background: rgb(248, 205, 205);
-} 
+  background: rgb(248, 205, 205); 
+  border-radius: 2%;
+}  
+
+#list li:nth-of-type(even) {
+  background: rgb(253, 187, 187);
+}
 
 #list li p{
   margin: 0;
