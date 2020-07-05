@@ -14,22 +14,27 @@
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;300;500;700;900&display=swap" rel="stylesheet">
     <!-- font awesome cdn -->
-    <script src="https://kit.fontawesome.com/25b13f05a6.js"></script>
+    <script src="https://kit.fontawesome.com/25b13f05a6.js"></script> 
 
+    <!-- iconify cdn --> 
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+ 
     <title>Todo List</title>
 </head> 
-    <header>
+    <header class="container">
         <h1>Todo List!</h1>
     </header> 
-    <main>
-        <div id="user_input_div" class="container">
-            <input id="todo_input" type="text" maxlength="27" placeholder="Please Enter a Todo..."> 
-            <i id="add_todo_btn"class="fas fa-plus btn"></i> 
-            <i id="clear_todo_btn" class="fas fa-minus btn"></i>
-        </div>  
-        <div id="list_body" >
-            <ul id="list" class="container">       
-            </ul>
+    <main> 
+        <div class="container">
+            <div id="user_input_div">
+                <input id="todo_input" type="text" maxlength="27" placeholder="Please Enter a Todo..."> 
+                <i id="add_todo_btn"class="fas fa-2x fa-ban btn"></i>  
+                <i id="clear_todo_btn" class="fas fa-2x fa-folder-plus btn"></i>
+            </div>  
+            <div id="list_body" class="container" >
+                <ul id="list" >       
+                </ul>
+            </div>
         </div>
     </main>
 

@@ -10,10 +10,14 @@
   --gradient-1: rgb(0,114,255);
   --gradient-2: linear-gradient(325deg, rgba(0,114,255,1) 0%, rgba(0,224,255,1) 100%);
 }
+.container{
+  /* width: 55vw;
+  margin: 0 auto; */
+}
 
 * {
   box-sizing: border-box;
-  list-style: none;
+  list-style: none; 
 }
 ul {
   font-size: 1.3rem; 
@@ -36,7 +40,7 @@ body {
 h1{
   color: white;  
   font-weight: 100; 
-  font-size: 3rem;   
+  font-size: 6rem;   
   margin: 0; 
   padding: 0;
 }
@@ -44,7 +48,8 @@ h1{
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
+  /* background: red;  */
 }
 main {
   display: flex;
@@ -53,36 +58,41 @@ main {
   height: 100vh; 
 
 } 
-.container{
-  width: 60vw;
+#user_input_div{
+
 }
 
+
 #todo_input{
-  
+  width: 35vw;
   height: 3vh; 
-  padding: 1.5rem; 
-  font-size: 1.2rem; 
-  color: #929292;
+  padding: 2.5rem; 
+  font-size: 1.5rem; 
+  color: #929292; 
+  font-weight: 100;
 
 }
 
 #list_body{
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   /* border-radius: 5%; */
   /* width: 70%; */ 
-  width: 40ww;
-  margin-top: 1.0rem; 
-  padding: 1rem;
+  /* width: 40ww; */
+  /* margin-top: 1.0rem;  */
+  /* padding: 1rem; */
   /* padding: 0.6rem; */
 }
 #list li {
   display: flex;
   justify-content: space-between;
-  background: white;
+  /* background: white; */
   border-radius: 2px; 
-  padding: 0.8rem; 
-  margin-top: 1.0rem;
+  /* padding: 0.8rem;  */
+  margin-top: 1.0rem; 
+  width: 45vw; 
+  list-style: none; 
+  /* position: relative; */
 }  
 
 
@@ -97,11 +107,28 @@ main {
 .btn:hover{
     color: rgb(223, 130, 130);
 }
-.fa-edit{
-  background: #21DD70; 
+.fa-edit{ 
+
+  background: #21DD70;  
+  padding: 1rem;
+  
+} 
+p{
+  background: white;
+  /* width: 88%; */ 
+  width: 40vw;
+  padding: .6rem; 
+  margin: 0;
 
 } 
-.fa-trash{
+
+#icon-container{
+  height: 300px;  
+  width: auto;
+
+}
+.fa-trash{ 
+  padding: 1rem;
   background: #DD2121;
 }
 /*  MAIN, HEADER, BODY END */
