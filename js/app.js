@@ -21,8 +21,8 @@ let add = e => {
         "<p>" +
         newTodo +
         "</p>" +
-        '<div class="icon-container"><i class="far fa-edit btn"> </i></div>' +
-        '<div><i class="fas fa-trash btn"></i></div> ';
+        '<div class="icon-container"><i class="far fa-clipboard btn"> </i></div>' +
+        '<div><i class="fas fa-trash-alt btn"></i></div> ';
 
       //attach todo to list body
       todo_list.appendChild(list_item);

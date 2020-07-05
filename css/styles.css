@@ -8,11 +8,7 @@
 
 :root{
   --gradient-1: rgb(0,114,255);
-  --gradient-2: linear-gradient(325deg, rgba(0,114,255,1) 0%, rgba(0,224,255,1) 100%);
-}
-.container{
-  /* width: 55vw;
-  margin: 0 auto; */
+  --gradient-2: linear-gradient(325deg, rgba(0,114,255,1) 0%, rgba(0,224,255,1) 100%) no-repeat;
 }
 
 * {
@@ -34,67 +30,50 @@ body {
   font-family: 'Catamaran', Arial, Helvetica, sans-serif;
   background: rgb(255, 241, 241); 
   background: var(--gradient-1); 
-  background: var(--gradient-2); 
+  background: var(--gradient-2);  
+  min-height: 100vh;
 }
 
 h1{
   color: white;  
-  font-weight: 100; 
+  font-weight: 300; 
   font-size: 6rem;   
-  margin: 0; 
-  padding: 0;
+  margin: 5rem 0 0 0;
 }
 
 
 header {
-  display: flex;
-  justify-content: center; 
-  /* background: red;  */
+  text-align: center;
 }
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh; 
+  height: 100%;
 
 } 
-#user_input_div{
 
-}
-
-
-#todo_input{
-  width: 35vw;
-  height: 3vh; 
-  padding: 2.5rem; 
-  font-size: 1.5rem; 
+::placeholder{
   color: #929292; 
-  font-weight: 100;
-
+}
+#todo_input{
+  width: 40rem;
+  height: 3vh; 
+  padding: 2.3rem; 
+  font-size: 1.5rem; 
+  color: black;
+  font-weight: 100; 
+  margin: 0 0 1rem 0;
 }
 
-#list_body{
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* border-radius: 5%; */
-  /* width: 70%; */ 
-  /* width: 40ww; */
-  /* margin-top: 1.0rem;  */
-  /* padding: 1rem; */
-  /* padding: 0.6rem; */
-}
 #list li {
   display: flex;
-  justify-content: space-between;
-  /* background: white; */
-  border-radius: 2px; 
-  /* padding: 0.8rem;  */
+
+
   margin-top: 1.0rem; 
   width: 45vw; 
   list-style: none; 
-  /* position: relative; */
 }  
-
 
 #list li p{
   margin: 0;
@@ -104,10 +83,10 @@ main {
  margin-left: .5rem; 
  color: white;
 } 
-.btn:hover{
-    color: rgb(223, 130, 130);
+.btn{
+  cursor: pointer;
 }
-.fa-edit{ 
+.fa-clipboard{ 
 
   background: #21DD70;  
   padding: 1rem;
@@ -116,7 +95,7 @@ main {
 p{
   background: white;
   /* width: 88%; */ 
-  width: 40vw;
+  width: 600rem;
   padding: .6rem; 
   margin: 0;
 
@@ -127,7 +106,7 @@ p{
   width: auto;
 
 }
-.fa-trash{ 
+.fa-trash-alt{ 
   padding: 1rem;
   background: #DD2121;
 }
