@@ -58,7 +58,7 @@ let clear = () => {
 };
 let edit = e => {
   //checks for edit btn class
-  if (e.target && e.target.className == "far fa-edit btn") {
+  if (e.target && e.target.className == "far fa-clipboard btn") {
     // redo is set to the first li element(the todo <p></p>);
     redo = e.target.parentNode.parentNode.firstElementChild;
     redoN = redo.textContent;
@@ -78,7 +78,7 @@ let edit = e => {
 };
 let del = e => {
   //finds event using event delegation
-  if (e.target && e.target.className == "fas fa-trash btn") {
+  if (e.target && e.target.className == "fas fa-trash-alt btn") {
     //removes the parent li element
     event.target.parentNode.parentNode.remove();
   }
