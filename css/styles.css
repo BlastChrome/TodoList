@@ -69,6 +69,7 @@ body {
   outline: none;
 }
 .todo-item{
+  display: flex;
   background: white;  
   padding: 0.2rem;
 }
@@ -93,10 +94,6 @@ body {
   background: #dd2121;
 } 
 
-#add-btn data{
-  background: red; 
-  d
-}
 
 
 
