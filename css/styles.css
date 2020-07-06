@@ -79,10 +79,25 @@ body {
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  background: red ; 
+  /* background: red ;  */
   width: 3rem; 
-  margin:  0 .1rem  0 .5rem;
+  margin:  0 .1rem  0 .5rem; 
+  color: white; 
+}  
+
+.edit-btn{
+  background: #21dd70;
+} 
+.trash-btn {
+  background: #dd2121;
+} 
+
+#add-btn data{
+  background: red; 
+  d
 }
+
+
 
 
 

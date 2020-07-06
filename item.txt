@@ -1,4 +1,10 @@
 //todo item template
-<!-- <div class="container item-container">
-    <li class="todo-item" >Test Todo</li>
-</div> -->
+<!--                 <div class="container item-container">
+                    <li class="todo-item" >Test Todo</li> 
+                    <div class="icon-container" id="edit-btn">
+                        <span class="iconify" data-icon="mdi:shape-square-plus" data-inline="false"></span>
+                    </div>
+                    <div class="icon-container"  id="trash-btn">
+                        <span class="iconify" data-icon="mdi:shape-square-plus" data-inline="false"></span>
+                    </div>   
+                </div> -->
