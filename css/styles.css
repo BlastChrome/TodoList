@@ -5,7 +5,6 @@
      Purpose: Making a simple Todo List app, just flexing a few muscles */
 
 /* GLOBAL */ 
-
 :root{
   --gradient-1: rgb(0,114,255);
   --gradient-2: linear-gradient(325deg, rgba(0,114,255,1) 0%, rgba(0,224,255,1) 100%) no-repeat;
@@ -20,55 +19,64 @@ ol{
   list-style: none;
 }
 
-/* GLOBAL END */
-
-
 body {
   font-family: 'Catamaran', Arial, Helvetica, sans-serif;
   background: rgb(255, 241, 241); 
   background: var(--gradient-1); 
   background: var(--gradient-2);  
   min-height: 100vh; 
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
-#header-text{
-  
-  text-align: center; 
-  font-size: 5rem; 
-  margin-top: 5rem;
-  font-weight: 100; 
-  color: white; 
-} 
-
 .container{
-  display: flex; 
-  justify-content: center;   
-  width: 70%; 
+  width: 60%;  
   margin: auto; 
   margin-top: 1.2rem;
   background: white;  
   font-weight: 400; 
 }  
+/* GLOBAL END */
 
+/* HEADER */
+#header-text{  
+  text-align: center; 
+  font-size: 3rem; 
+  margin-top: 3rem;
+  font-weight: 100; 
+  color: white; 
+} 
+/* HEADER END */
 
 
 #todo-input ,.todo-item{
   width: 100%; 
 } 
 
+/* INPUT */
 #todo-input{
-  padding: 2rem;
+  padding: 1.5rem;
   border: none;  
-  font-size: 1.5rem; 
+  font-size: 1.0rem; 
 }  
 #todo_input::placeholder{
   color: #C1C1C1;
 } 
+/* INPUT END */ 
 
+
+/* TODO ITEM */
 #todo-input:focus{
   outline: none;
 }
 .item-container{
-  padding: 0.6rem;
+  padding: 0.3rem;
+} 
+/* TODO ITEM END */
+
+
+/* Desktop sizing */
+@media only screen and (min-width: 768px){
+  .container{
+    max-width: 45vw;
+  }
 }

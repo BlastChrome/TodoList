@@ -15,3 +15,7 @@ DONE
 //TODO - add an edit todo feature! 
 should be able to edit individual todos 
 DONE
+
+//IMPORTANT
+Making some major changes, figured this project would move  
+more smoothly with Jquery and restructuring alot of the html! 
