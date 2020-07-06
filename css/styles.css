@@ -25,15 +25,14 @@ body {
   background: var(--gradient-1); 
   background: var(--gradient-2);  
   min-height: 100vh; 
-  font-size: 1.2rem;
-}
+  font-size: 1.2rem; 
+} 
 
 .container{
-  width: 60%;  
-  margin: auto; 
+  display: flex;
+  justify-content: center;
   margin-top: 1.2rem;
-  background: white;  
-  font-weight: 400; 
+  font-weight: 400;  
 }  
 /* GLOBAL END */
 
@@ -49,12 +48,13 @@ body {
 
 
 #todo-input ,.todo-item{
-  width: 100%; 
-} 
+  width: 60vw;
+}  
+
 
 /* INPUT */
-#todo-input{
-  padding: 1.5rem;
+#todo-input{ 
+  padding: 1.2rem;
   border: none;  
   font-size: 1.0rem; 
 }  
@@ -68,24 +68,35 @@ body {
 #todo-input:focus{
   outline: none;
 }
-.item-container{
-  padding: 0.3rem;
-} 
-/* TODO ITEM END */
+.todo-item{
+  background: white;  
+  padding: 0.2rem;
+}
+/* TODO ITEM END */ 
+
+/* buttons */
+.icon-container{
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background: red ; 
+  width: 3rem; 
+  margin:  0 .1rem  0 .5rem;
+}
+
 
 
 /* Desktop sizing */
 @media only screen and (min-width: 768px){
-  .container{
-    max-width: 668px;
-  } 
+  #todo-input, .todo-item{
+    max-width: 624px;
+  }
   #header-text{
     font-size: 6rem;
   }  
   #todo-input{
     font-size: 1.5rem;
   }  
-
   .item-container{
     font-size: 1.4rem; 
     padding: 0.5rem;
