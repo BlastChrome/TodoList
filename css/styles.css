@@ -77,6 +77,17 @@ body {
 /* Desktop sizing */
 @media only screen and (min-width: 768px){
   .container{
-    max-width: 45vw;
+    max-width: 668px;
+  } 
+  #header-text{
+    font-size: 6rem;
+  }  
+  #todo-input{
+    font-size: 1.5rem;
+  }  
+
+  .item-container{
+    font-size: 1.4rem; 
+    padding: 0.5rem;
   }
 }
