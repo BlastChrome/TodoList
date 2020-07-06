@@ -82,7 +82,8 @@ body {
   /* background: red ;  */
   width: 3rem; 
   margin:  0 .1rem  0 .5rem; 
-  color: white; 
+  color: white;  
+  cursor: pointer;
 }  
 
 .edit-btn{
