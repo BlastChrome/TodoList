@@ -105,7 +105,8 @@ body {
     max-width: 624px;
   }
   #header-text{
-    font-size: 6rem;
+    font-size: 6rem; 
+    margin-top: 7rem;
   }  
   #todo-input{
     font-size: 1.5rem;

@@ -85,10 +85,10 @@ let del = e => {
 };
 
 //variable declarations
-let add_btn = document.getElementById("add_todo_btn");
-let clear_btn = document.getElementById("clear_todo_btn");
-let todo_input = document.getElementById("todo_input");
-let todo_list = document.getElementById("list");
+let add_btn = document.getElementById("add-btn");
+let clear_btn = document.getElementById("delete-btn");
+let todo_input = document.getElementById("todo-input");
+let todo_list = document.getElementById("todo-items-container");
 
 //event listener(s)
 add_btn.addEventListener("click", add);

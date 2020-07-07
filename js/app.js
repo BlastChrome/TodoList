@@ -1,22 +1,13 @@
-// Variable declarations
-$add_btn = $('#add-btn'); 
-$clr_btn = $('#delete-btn'); 
-$input = $('#todo-input'); 
-$list = $('ol');
+// function declaration
+let add_btn = document.getElementById("add-btn");
+let clear_btn = document.getElementById("delete-btn");
+let todo_input = document.getElementById("todo_input");
+let todo_list = document.getElementById("list");
 
-// function declarations 
-let add = e =>{ 
-    if (e.which === 13 || e.target === $add_btn){
-        if($input.val() == '')
-            alert('please enter a todo first')
-    }
-};
-let clr = e => {
-    console.log("clear btn clicked");
-}
 
-// function call
-$add_btn.on('click', add); 
-$clr_btn.on('click', clr); 
-$input.on('keypress', add); 
+add = e => {
+    
+} 
 
+
+add_btn.addEventListener('click', add);
