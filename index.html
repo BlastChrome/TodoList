@@ -2,49 +2,63 @@
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
      Version: 1.92
-     Purpose: Making a simple Todo List app, just flexing a few muscles --> 
+     Purpose: Making a simple Todo List app, just flexing a few muscles -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    <link rel="stylesheet" href="/css/styles.css">   
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/styles.css">
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;300;500;700;900&display=swap"
+        rel="stylesheet">
     <!-- font awesome cdn -->
-    <script src="https://kit.fontawesome.com/25b13f05a6.js"></script> 
+    <script src="https://kit.fontawesome.com/25b13f05a6.js"></script>
 
-    <!-- iconify cdn --> 
+    <!-- iconify cdn -->
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
- 
-    <title>Todo List</title> 
 
-    <body>
-        <header>
-            <h1 id="header-text">Todo List</h1>
-        </header>  
+    <title>Todo List</title>
 
-            <div id="input-container"  class="container">
-                <input type="text" id="todo-input" placeholder="Please Enter a Todo..."> 
-               
-                <div class="icon-container" id="add-btn">
-                    <span class="iconify" data-icon="mdi:shape-square-plus" data-inline="false" data-width="3rem" data-height="3rem"></span>
-                </div>
+<body>
+    <header>
+        <h1 id="header-text">Todo List</h1>
+    </header>
 
-                <div class="icon-container" id="delete-btn">
-                    <span class="iconify" data-icon="mdi:delete-alert-outline" data-inline="false" data-width="3rem" data-height="3rem"></span>
-                </div>
-            </div>  
+    <div id="input-container" class="container">
+        <input type="text" id="todo-input" placeholder="Please Enter a Todo...">
 
-            <ol id="todo-items-container"> 
+        <div class="icon-container" id="add-btn">
+            <span class="iconify" data-icon="mdi:shape-square-plus" data-inline="false" data-width="3rem"
+                data-height="3rem"></span>
+        </div>
 
-            </ol>
-    </body>
+        <div class="icon-container" id="delete-btn">
+            <span class="iconify" data-icon="mdi:delete-alert-outline" data-inline="false" data-width="3rem"
+                data-height="3rem"></span>
+        </div>
+    </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script src="js/oldapp.js"></script>
+    <ol id="todo-items-container">
+        <!-- <li class="container">
+            <p class="todo-item">asd</p>
+            <div class="icon-container edit-btn">
+                <span class="iconify" data-icon="ic:outline-edit" data-inline="false" data-height="1.6rem"></span>
+            </div>
+            <div class="icon-container trash-btn">
+                <span class="iconify" data-icon="carbon:trash-can" data-inline="false" data-height="1.6rem"></span>
+            </div>   
+        </li> -->
+    </ol>
 </body>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="js/app.js"></script>
+</body>
+
 </html>
