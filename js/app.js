@@ -52,9 +52,9 @@ let clear = () => {
         alert("OK!");
         break;
       } else {
-        if (answer == "") alert("Nigga did i say you coud write nothing??");
-        else alert("Nigga did i say you coud write " + answer + "??");
-        alert("now do it again, dumbass!");
+        if (answer == "") alert("please give an input!");
+        else alert("invalid input: " + answer + "??");
+        alert("please resubmit your edit");
       }
     } while (answer != "Y" || answer != "y" || answer != "n" || answer != "N");
   }
@@ -69,10 +69,10 @@ let edit = e => {
       redo.textContent = prompt("Edit " + redo.textContent);
       if (redo.textContent.length > 27 || redo.textContent.length < 1) {
         if (redo.textContent.length > 27) {
-          alert("LMAO THATS WAY TO LONG YOU FUCK!");
+          alert("todo too long");
           redo.textContent = redoN;
         } else if (redo.textContent.length < 1){
-          alert("LMAO THATS WAY TO SHORT YOU FUCK!");
+          alert("Todo too short");
           redo.textContent = redoN;
         }
       }
