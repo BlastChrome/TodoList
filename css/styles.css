@@ -29,7 +29,8 @@ body {
 } 
 svg{
   pointer-events: none;
-}
+} 
+
 
 .container{
   display: flex;
@@ -74,7 +75,7 @@ svg{
 .todo-item{
   display: flex;
   background: white;  
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 /* TODO ITEM END */ 
 
@@ -84,15 +85,26 @@ svg{
   justify-content: center; 
   align-items: center; 
   /* background: red ;  */
-  width: 3rem; 
+  width: 3.4rem; 
   margin:  0 .1rem  0 .5rem; 
-  color: white;  
-  cursor: pointer;
-}  
+  color: white;   
+  cursor: pointer;  
+  
+  
+}   
+
 
 .edit-btn{
   background: #21dd70;
-} 
+}   
+
+.icon-container:hover{
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2); 
+  transition: ease-in .1s;
+}
+
 .trash-btn {
   background: #dd2121;
 } 
@@ -112,10 +124,15 @@ svg{
     margin-top: 7rem;
   }  
   #todo-input{
-    font-size: 1.5rem;
-  }  
+    font-size: 1.5rem; 
+    padding: 1.8rem ;
+  }   
+  .todo-item{
+    padding: 1.4rem;
+  }
   .item-container{
     font-size: 1.4rem; 
-    padding: 0.5rem;
+    padding:  1.5rem ; 
+    width: 3rem;
   }
 }

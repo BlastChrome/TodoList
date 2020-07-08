@@ -59,11 +59,11 @@ let clear = () => {
     } while (answer != "Y" || answer != "y" || answer != "n" || answer != "N");
   }
 };
-let edit = e => {
+let edit = e => {  
   //checks for edit btn class
-  if (e.target && e.target.className == "edit-btn") {
-    // redo is set to the first li element(the todo <p></p>);
-    redo = e.target.parentNode.parentNode.firstElementChild;
+  console.log(e.target.parentNode.firstElementChild);
+  if (e.target.className == "icon-container edit-btn") { 
+    redo = e.target.parentNode.firstElementChild;
     redoN = redo.textContent;
     do {
       redo.textContent = prompt("Edit " + redo.textContent);
@@ -77,21 +77,22 @@ let edit = e => {
         }
       }
     } while (redo.textContent.length > 27);
-  }
+  } 
 };
-let del = e => {
-  //finds event using event delegation
-  if (e.target && e.target.className == "trash-btn") {
-    //removes the parent li element
-    event.target.parentNode.parentNode.remove();
-  }
-};
+let del = e => { 
+  if ( e.target.className == "icon-container trash-btn") {
+    e.target.parentNode.remove();
+  } 
+}; 
+
+
 
 //variable declarations
 let add_btn = document.getElementById("add-btn");
 let clear_btn = document.getElementById("delete-btn");
 let todo_input = document.getElementById("todo-input");
-let todo_list = document.getElementById("todo-items-container");
+let todo_list = document.getElementById("todo-items-container"); 
+
 
 //event listener(s)
 add_btn.addEventListener("click", add);
@@ -100,4 +101,5 @@ clear_btn.addEventListener("click", clear);
 
 //todo item(s) listener(s)
 todo_list.addEventListener("click", del);
-todo_list.addEventListener("click", edit);
+todo_list.addEventListener("click", edit); 
+todo_list.addEventListener('click', done);
