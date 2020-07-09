@@ -80,14 +80,17 @@ let edit = e => {
 };
 let del = e => { 
   if ( e.target.className == "icon-container trash-btn") {
-    e.target.parentNode.remove();
+    e.target.parentNode; 
+    e.target.parentNode.remove(); 
+   
   } 
 }; 
 let done = e => {
   if(e.target.className == "todo-item"){ 
     e.target.classList.add('done');
   } else if(e.target.className == "todo-item done"){
-    e.target.classList.remove('done');
+    e.target.classList.remove('done'); 
+    
   }
 };
 

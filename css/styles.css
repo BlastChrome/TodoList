@@ -75,7 +75,8 @@ svg{
 .todo-item{
   display: flex;
   background: white;  
-  padding: 0.5rem;
+  padding: 0.5rem; 
+  font-weight: 300;
 }
 /* TODO ITEM END */ 
 
