@@ -1,3 +1,4 @@
+
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
@@ -76,7 +77,8 @@ svg{
   display: flex;
   background: white;  
   padding: 0.5rem;
-  cursor: pointer;
+  cursor: pointer; 
+  font-weight: 300;
 }
 /* TODO ITEM END */ 
 
@@ -142,3 +144,4 @@ svg{
     width: 3rem;
   }
 }
+

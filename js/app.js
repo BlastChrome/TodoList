@@ -1,3 +1,4 @@
+
 /* Program: TodoList web app
      Programmer: Nicholas Allen Jackson 
      Date: 11/15/2019 
@@ -80,14 +81,17 @@ let edit = e => {
 };
 let del = e => { 
   if ( e.target.className == "icon-container trash-btn") {
-    e.target.parentNode.remove();
+    e.target.parentNode; 
+    e.target.parentNode.remove(); 
+   
   } 
 }; 
 let done = e => {
   if(e.target.className == "todo-item"){ 
     e.target.classList.add('done');
   } else if(e.target.className == "todo-item done"){
-    e.target.classList.remove('done');
+    e.target.classList.remove('done'); 
+    
   }
 };
 
@@ -108,3 +112,4 @@ clear_btn.addEventListener("click", clear);
 todo_list.addEventListener("click", del);
 todo_list.addEventListener("click", edit); 
 todo_list.addEventListener('click', done);
+
