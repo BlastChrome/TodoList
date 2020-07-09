@@ -76,6 +76,7 @@ svg{
   display: flex;
   background: white;  
   padding: 0.5rem;
+  cursor: pointer;
 }
 /* TODO ITEM END */ 
 
