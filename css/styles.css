@@ -1,0 +1,146 @@
+
+/* Program: TodoList web app
+     Programmer: Nicholas Allen Jackson 
+     Date: 11/15/2019 
+     Version: 1.92
+     Purpose: Making a simple Todo List app, just flexing a few muscles */
+
+/* GLOBAL */ 
+:root{
+  --gradient-1: rgb(0,114,255);
+  --gradient-2: linear-gradient(325deg, rgba(0,114,255,1) 0%, rgba(0,224,255,1) 100%) no-repeat;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0; 
+  margin: 0;
+}  
+ol{
+  list-style: none;
+}
+
+body {
+  font-family: 'Catamaran', Arial, Helvetica, sans-serif;
+  background: rgb(255, 241, 241); 
+  background: var(--gradient-1); 
+  background: var(--gradient-2);  
+  min-height: 100vh; 
+  font-size: 1.2rem; 
+} 
+svg{
+  pointer-events: none;
+} 
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+  font-weight: 400;  
+}  
+/* GLOBAL END */
+
+/* HEADER */
+#header-text{  
+  text-align: center; 
+  font-size: 3rem; 
+  margin-top: 3rem;
+  font-weight: 100; 
+  color: white; 
+} 
+/* HEADER END */
+
+
+#todo-input ,.todo-item{
+  width: 60vw;
+}  
+
+
+/* INPUT */
+#todo-input{ 
+  padding: 1.2rem;
+  border: none;  
+  font-size: 1.0rem; 
+}  
+#todo_input::placeholder{
+  color: #C1C1C1;
+} 
+/* INPUT END */ 
+
+
+/* TODO ITEM */
+#todo-input:focus{
+  outline: none;
+}
+.todo-item{
+  display: flex;
+  background: white;  
+  padding: 0.5rem; 
+  font-weight: 300;
+}
+/* TODO ITEM END */ 
+
+/* buttons */
+.icon-container{
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  /* background: red ;  */
+  width: 3.4rem; 
+  margin:  0 .1rem  0 .5rem; 
+  color: white;   
+  cursor: pointer;  
+  
+  
+}    
+
+.done{
+  color: grey; 
+  text-decoration: line-through;
+}
+
+
+.edit-btn{
+  background: #21dd70;
+}   
+
+.icon-container:hover{
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2); 
+  transition: ease-in .1s;
+}
+
+.trash-btn {
+  background: #dd2121;
+} 
+
+
+
+
+
+
+/* Desktop sizing */
+@media only screen and (min-width: 768px){
+  #todo-input, .todo-item{
+    max-width: 624px;
+  }
+  #header-text{
+    font-size: 6rem; 
+    margin-top: 7rem;
+  }  
+  #todo-input{
+    font-size: 1.5rem; 
+    padding: 1.8rem ;
+  }   
+  .todo-item{
+    padding: 1.4rem;
+  }
+  .item-container{
+    font-size: 1.4rem; 
+    padding:  1.5rem ; 
+    width: 3rem;
+  }
+}
+
