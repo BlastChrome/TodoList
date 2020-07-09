@@ -61,7 +61,6 @@ let clear = () => {
 };
 let edit = e => {  
   //checks for edit btn class
-  console.log(e.target.parentNode.firstElementChild);
   if (e.target.className == "icon-container edit-btn") { 
     redo = e.target.parentNode.firstElementChild;
     redoN = redo.textContent;
@@ -84,7 +83,13 @@ let del = e => {
     e.target.parentNode.remove();
   } 
 }; 
-
+let done = e => {
+  if(e.target.className == "todo-item"){ 
+    e.target.classList.add('done');
+  } else if(e.target.className == "todo-item done"){
+    e.target.classList.remove('done');
+  }
+};
 
 
 //variable declarations
