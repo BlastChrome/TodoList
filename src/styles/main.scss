@@ -1,0 +1,19 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: url('../../assets/images/bg-light.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 100vh;
+    background-size: auto;
+    width: 100%;
+}

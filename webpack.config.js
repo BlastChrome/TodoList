@@ -1,25 +1,38 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-    // ... rest of your webpack config
+    entry: './src/index.js',
+    devtool: 'inline-source-map',
+    plugins: [new HtmlWebpackPlugin({
+        title: 'Todo List',
+    })],
+    devServer: {
+        static: './dist',
+    },
+    mode: "development",
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
+    optimization: {
+        runtimeChunk: false
+    },
     module: {
         rules: [
-            // ... your other loaders, like babel-loader
             {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader'
-                ]
-            }
-        ]
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
+
+        ],
     },
-    plugins: [
-        // ... your other plugins
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[id].css',
-        })
-    ]
 };
