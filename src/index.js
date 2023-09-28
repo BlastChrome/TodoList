@@ -1,5 +1,12 @@
 import './styles/main.scss';
-import UI from './modules/ui'
+import DOMManager from './modules/DOMManager';
+
+const dom = new DOMManager()
+
+
+
+
+
 
 
 
