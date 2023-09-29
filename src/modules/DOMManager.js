@@ -1,31 +1,26 @@
 class DOMManager {
     constructor() {
-        this.body = document.body;
-        this.mainContainer = this.createElement("div", {
-            id: "main-container",
-            classNames: ["main-container", "container"],
-        });
-        this.innerContainer = this.createElement("div", {
-            id: "inner-container",
-            classNames: ["inner-container", "container"],
-        });
-        this.background = this.createElement("div", {
+        this._body = document.body;
+        this._background = this.createElement("div", {
             id: "background",
-            classNames: ["background"],
+            classNames: ["background", "background"],
         });
-        this.h1 = this.createElement("h1", {
+        this._container = this.createElement("div", {
+            id: "container",
+            classNames: ["container", "container"],
+        });
+
+        this._h1 = this.createElement("h1", {
             text: "Todo",
             id: "todo-title",
-            classNames: ["todo-title"],
+            classNames: ["todo-title", "container__title"],
         });
-        this.render();
     }
 
     render() {
-        this.body.appendChild(this.mainContainer);
-        this.mainContainer.appendChild(this.background);
-        this.mainContainer.appendChild(this.innerContainer);
-        this.innerContainer.appendChild(this.h1);
+        this._body.appendChild(this._background);
+        this._background.appendChild(this._container);
+        this._container.appendChild(this._h1);
     }
 
     createElement(tagName, options = {}) {

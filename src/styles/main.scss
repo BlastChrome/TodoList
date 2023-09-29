@@ -12,7 +12,7 @@ body {
 
     font-family: 'Josefin Sans', sans-serif;
 
-    .main-bg {
+    .background {
         background-image: url('../../assets/images/bg-light.jpg');
         background-repeat: no-repeat;
         background-position: center top;
@@ -27,13 +27,30 @@ body {
             position: absolute;
             width: 100%;
             height: 100%;
-            z-index: 1;
+            z-index: 0;
             background: linear-gradient(225deg, #5596FF 0%, #AC2DEB 100%);
             opacity: 0.7;
 
         }
+
+        .container {
+            width: 100%;
+            max-width: 551px;
+            position: absolute;
+            transform: translate(50%, 71px);
+            right: 50%;
+            z-index: 1;
+            padding: 0 8px;
+
+            &__title {
+                font-weight: 700;
+                color: #fff;
+                text-align: left;
+                position: relative;
+                font-size: 2.5em;
+                text-transform: uppercase;
+                letter-spacing: 0.35em;
+            }
+        }
     }
-
-
-
 }
