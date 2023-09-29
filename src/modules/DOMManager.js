@@ -3,7 +3,7 @@ class DOMManager {
         this._body = document.body;
         this._background = this.createElement("div", {
             id: "background",
-            classNames: ["background", "background"],
+            classNames: ["background--light", "background"],
         });
         this._container = this.createElement("div", {
             id: "container",
