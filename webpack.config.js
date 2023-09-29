@@ -1,12 +1,9 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
     entry: './src/index.js',
     devtool: 'inline-source-map',
-    plugins: [new HtmlWebpackPlugin({
-        title: 'Todo List',
-    })],
+
     devServer: {
         static: './dist',
     },

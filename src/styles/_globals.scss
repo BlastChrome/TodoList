@@ -6,4 +6,11 @@
 
 body {
     font-family: $font-f1;
+    height: 100vh;
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

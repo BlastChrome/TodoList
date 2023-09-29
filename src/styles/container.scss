@@ -5,15 +5,15 @@
     transform: translate(50%, 71px);
     right: 50%;
     z-index: 1;
-    padding: 0 8px;
+    padding: 0px 5px;
 
     &__title {
-        font-weight: 700;
+        font-weight: 600;
         color: #fff;
         text-align: left;
         position: relative;
         font-size: 2.5em;
         text-transform: uppercase;
-        letter-spacing: 0.35em;
+        letter-spacing: 0.38em;
     }
 }
