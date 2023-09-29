@@ -1,15 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "globals";
 @import "fonts";
 @import "background";
 @import "container";
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Josefin Sans', sans-serif;
-}
