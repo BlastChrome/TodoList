@@ -10,6 +10,7 @@
 
 <body>
     <div class="background--light background" id="background">
+
         <div class="container" id="container">
             <div class="flex" id="title-flex">
                 <h1 class="todo-title container__title" id="todo-title">Todo</h1><svg width="26" height="26"
@@ -19,7 +20,11 @@
                         fill="white"></path>
                 </svg>
             </div>
-            <form class="todo-form" id="todo-form"></form>
+
+            <form class="todo-form" id="todo-form">
+                <input type="text" name="todo-input" id="todo-input" class="todo-form__input"
+                    placeholder="Create a new todo…">
+            </form>
         </div>
     </div>
     <script src="main.bundle.js"></script>
