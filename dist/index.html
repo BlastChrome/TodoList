@@ -10,11 +10,11 @@
 
 <body>
     <div class="background--light background" id="background">
-
         <div class="container" id="container">
+
             <div class="flex" id="title-flex">
-                <h1 class="todo-title container__title" id="todo-title">Todo</h1><svg width="26" height="26"
-                    viewBox="0 0 26 26" fill="none">
+                <h1 class="flex__title todo-title container__title" id="todo-title">Todo</h1>
+                <svg class="flex__svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M15.3717 0.215831C10.5931 1.19962 7 5.4302 7 10.5C7 16.299 11.701 21 17.5 21C20.4958 21 23.1986 19.7454 25.1116 17.7328C23.2191 22.5722 18.5098 26 13 26C5.8203 26 0 20.1797 0 13C0 5.8203 5.8203 0 13 0C13.81 0 14.6027 0.0740788 15.3717 0.215831Z"
                         fill="white"></path>
@@ -25,6 +25,7 @@
                 <input type="text" name="todo-input" id="todo-input" class="todo-form__input"
                     placeholder="Create a new todo…">
             </form>
+
             <div class="todo-list" id="todo-list">
                 <label class="todo-list__todo">Complete online Javascript course
                     <input type="checkbox" checked="checked">
@@ -50,19 +51,22 @@
                     <input type="checkbox">
                     <span class="checkmark"></span>
                 </label>
-                <div class="todo-list__menu">
-                    <p class="todo-list__menu__items-left" id="items-left">0 items left</p>
-                    <div class="todo-list__menu__filter" id="filter">
-                        <p class="todo-list__menu__filter__all" id="all">All</p>
-                        <p class="todo-list__menu__filter__active" id="active">Active</p>
-                        <p class="todo-list__menu__filter__completed" id="completed">Completed</p>
-                    </div>
-                    <p class="todo-list__menu__clear-completed" id="clear-completed">Clear Completed</p>
-                </div>
-                <div class="todo-list__drag-drop-callout">
-                    <p class="todo-list__drag-drop-callout__text">Drag and drop to reorder list</p>
-                </div>
             </div>
+
+            <div class="menu">
+                <p class="menu__items-left" id="items-left">0 items left</p>
+                <div class="menu__filter" id="filter">
+                    <p class="menu__filter__all" id="all">All</p>
+                    <p class="menu__filter__active" id="active">Active</p>
+                    <p class="menu__filter__completed" id="completed">Completed</p>
+                </div>
+                <p class="menu__clear-completed" id="clear-completed">Clear Completed</p>
+            </div>
+
+            <div class="drag-drop">
+                <p class="drag-drop__text">Drag and drop to reorder list</p>
+            </div>
+
         </div>
     </div>
     <script src="main.bundle.js"></script>
