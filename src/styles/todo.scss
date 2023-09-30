@@ -1,0 +1,81 @@
+.todo-list {
+    margin-top: 23px;
+
+    &__todo {
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-radius: 5px;
+        background: $color-white;
+        border-bottom: 1px solid $color-light-purple;
+        padding: 22.4px 72.3px;
+        box-shadow: $shadow;
+        color: $color-purple;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.25px;
+    }
+}
+
+
+/* Hide the browser's default checkbox */
+.todo-list__todo input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 1px solid $color-light-purple;
+    border-radius: 50%;
+    transform: translate(100%, -55%);
+}
+
+/* On mouse-over, add a grey background color */
+.todo-list__todo:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.todo-list__todo input:checked~.checkmark {
+    background: linear-gradient(225deg, #5596FF 0%, #AC2DEB 100%);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.todo-list__todo input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.todo-list__todo .checkmark:after {
+    left: 10px;
+    top: 7px;
+    width: 2px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
