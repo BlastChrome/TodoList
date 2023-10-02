@@ -14,9 +14,11 @@
         display: flex;
         min-width: 130px;
         text-align: left;
+        cursor: pointer;
 
         &__text {
             margin-left: 26px;
+
 
             &--active {
                 color: $color-blue;

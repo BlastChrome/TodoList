@@ -21,4 +21,8 @@
     .shadow-wrapper {
         box-shadow: $shadow;
     }
+
+    svg {
+        cursor: pointer;
+    }
 }
