@@ -1,7 +1,6 @@
 .todo-list {
     margin-top: 23px;
 
-
     &__cross {
         width: 18px;
         height: 18px;
@@ -11,7 +10,7 @@
         transition: $animation-timing;
         transform: translate(-136%, 118%) scale(0);
         cursor: pointer;
-
+        z-index: 2;
 
         &:after,
         &:before {
@@ -52,6 +51,8 @@
         letter-spacing: -0.25px;
 
 
+
+
         /* Hide the browser's default checkbox */
         input {
             position: absolute;
@@ -69,6 +70,8 @@
             &:checked~.checkmark:after {
                 display: block;
             }
+
+
         }
 
         /* Create a custom checkbox */
@@ -109,5 +112,10 @@
         &:hover input~.todo-list__cross {
             transform: translate(-136%, 118%) scale(1);
         }
+    }
+
+    &__todo--checked {
+        text-decoration: line-through;
+        color: $color-light-purpe-2;
     }
 }
