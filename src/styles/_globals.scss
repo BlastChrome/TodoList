@@ -5,12 +5,20 @@
     font-family: $font-f1
 }
 
-body {
+.body {
     height: 100vh;
+
+    &--light {
+        background: $color-light-grey;
+    }
 
     .flex {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .shadow-wrapper {
+        box-shadow: $shadow;
     }
 }

@@ -2,13 +2,13 @@
     display: flex;
     justify-content: space-between;
     padding: 17px 25px;
-    box-shadow: $shadow-2;
     color: $color-grey;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.194px;
+    background: $color-white;
 
     &__filter {
         display: flex;

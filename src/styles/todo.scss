@@ -1,6 +1,38 @@
 .todo-list {
     margin-top: 23px;
 
+
+    &__cross {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: $animation-timing;
+        transform: translate(-136%, 118%) scale(0);
+        cursor: pointer;
+
+
+        &:after,
+        &:before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 22px;
+            left: 0;
+            top: 0;
+            background: $color-purple;
+        }
+
+        &:after {
+            transform: translate(9px, -1px) rotate(45deg);
+        }
+
+        &:before {
+            transform: translate(9px, -1px) rotate(-45deg);
+        }
+    }
+
     &__todo {
         position: relative;
         cursor: pointer;
@@ -19,6 +51,7 @@
         line-height: normal;
         letter-spacing: -0.25px;
 
+
         /* Hide the browser's default checkbox */
         input {
             position: absolute;
@@ -29,7 +62,7 @@
 
             /* When the checkbox is checked, add a gradient background */
             &:checked~.checkmark {
-                background: $bg-gradient;
+                background: $todo-gradient;
             }
 
             // /* Show the checkmark when checked */
@@ -49,6 +82,7 @@
             border: 1px solid $color-light-purple;
             border-radius: 50%;
             transform: translate(100%, -55%);
+            transition: $animation-timing;
 
             /* Create the checkmark/indicator (hidden when not checked) */
             &:after {
@@ -59,7 +93,7 @@
                 top: 7px;
                 width: 2px;
                 height: 7px;
-                border: solid white;
+                border: solid $color-white;
                 border-width: 0 2px 2px 0;
                 -webkit-transform: rotate(45deg);
                 -ms-transform: rotate(45deg);
@@ -69,7 +103,11 @@
 
         /* On mouse-over, add a grey background color */
         &:hover input~.checkmark {
-            background-color: #ccc;
+            background-color: $color-light-purple;
+        }
+
+        &:hover input~.todo-list__cross {
+            transform: translate(-136%, 118%) scale(1);
         }
     }
 }
