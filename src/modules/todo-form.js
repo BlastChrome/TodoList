@@ -6,10 +6,9 @@ class TodoForm {
         this._form.addEventListener("submit", e => {
             e.preventDefault();
             const inputValue = this._inputField.value.trim();
-            if (inputValue) {
+            if (inputValue.length > 0) {
                 onSubmit(inputValue);
-                // clears the form after submit
-                this._inputField.value = "";
+
             }
         });
     }

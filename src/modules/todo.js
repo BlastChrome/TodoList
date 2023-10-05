@@ -22,7 +22,6 @@ class Todo {
     updateTimeStamp() {
         this._timestamp = new Date();
     }
-
 }
 
 export default Todo;
