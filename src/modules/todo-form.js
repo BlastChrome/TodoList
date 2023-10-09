@@ -1,11 +1,9 @@
 class TodoForm {
-    constructor(text) {
-        this._text = this.validateInput(text);
+    constructor() {
     }
 
     validateInput(text) {
-        if (text.length <= 0) return null;
-        return text;
+        return text.length > 0;
     }
 
 }

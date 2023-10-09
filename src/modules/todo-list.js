@@ -7,13 +7,13 @@ class TodoList {
         return this._list;
     }
 
-    addTodo(todo, callback) {
-        this._list.push(todo);
-        callback(todo);
+    addTodo(todo,) {
+        this.list.push(todo);
     }
 
-    removeTodo(index) {
-        this._list.splice(index, 1);
+    removeTodo(index, callback) {
+        const todo = this.list.splice(index, 1);
+        callback(todo);
     }
 }
 
