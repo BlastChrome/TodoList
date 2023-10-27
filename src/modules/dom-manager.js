@@ -8,7 +8,7 @@ export default class DomManager {
     }
 
     subscribe = () => {
-
+        // TODO
     }
 
     cacheDom = () => {
@@ -24,17 +24,17 @@ export default class DomManager {
         this.filter_menu.addEventListener('click', this.handleFilterClick);
     }
 
-    // Event Handler Functions 
     handleFormSubmit = e => {
         e.preventDefault();
         pubsub.publish("validateInput", this.input.value);
+        this.input.value = "";
     }
 
     handleTodoClick = e => {
-        console.log(e.target);
+        // TODO
     }
 
     handleFilterClick = e => {
-        console.log(e.target);
+        // TODO
     }
 }
