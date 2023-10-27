@@ -27,7 +27,7 @@ export default class DomManager {
     // Event Handler Functions 
     handleFormSubmit = e => {
         e.preventDefault();
-        console.log(e.target);
+        pubsub.publish("validateInput", this.input.value);
     }
 
     handleTodoClick = e => {

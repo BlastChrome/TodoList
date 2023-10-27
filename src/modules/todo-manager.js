@@ -11,11 +11,13 @@ export default class TodoManager {
     subscribe = () => {
         // pubsub.subscribe("listUpdated");
         // pubsub.subscribe("inputValidated", this.addTodoToList);
+        pubsub.subscribe("inputValidated", this.addTodoToList);
     }
 
     addTodoToList = text => {
         const todo = new Todo(text);
         this.todo_list.add(todo);
         pubsub.publish("todoAdded", todo);
+        console.log(this.todo_list);
     }
 }
