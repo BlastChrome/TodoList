@@ -7,6 +7,3 @@ export default class Todo {
         this.timestamp = new Date().toISOString();
     }
 }
-
-const testTodo = new Todo("test");
-console.log(testTodo);
