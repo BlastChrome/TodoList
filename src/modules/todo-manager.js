@@ -9,8 +9,8 @@ export default class TodoManager {
     }
 
     subscribe = () => {
-        pubsub.subscribe("listUpdated");
-        pubsub.subscribe("inputValidated", this.addTodoToList);
+        // pubsub.subscribe("listUpdated");
+        // pubsub.subscribe("inputValidated", this.addTodoToList);
     }
 
     addTodoToList = text => {

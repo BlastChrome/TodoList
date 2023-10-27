@@ -5,8 +5,11 @@ module.exports = {
     devtool: 'inline-source-map',
 
     devServer: {
-        static: './dist',
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
     },
+
     mode: "development",
     output: {
         filename: '[name].bundle.js',
