@@ -16,9 +16,6 @@ export default class DomManager {
         this.input = document.getElementById("todo-input");
         this.dom_list = document.getElementById("todo-list");
         this.filter_menu = document.getElementById("menu");
-        console.log(this.form);
-        console.log(this.input);
-        console.log(this.dom_list);
     }
 
     initEvents = () => {
