@@ -31,7 +31,7 @@ export default class DomManager {
     }
 
     handleTodoClick = e => {
-        // TODO
+        console.log(e.target);
     }
 
     handleFilterClick = e => {
@@ -44,14 +44,15 @@ export default class DomManager {
     }
 
     createTodoElement = todo => {
-        const span = document.createElement("span");
-        span.innerHTML = `
-            <label class="todo-list__todo ${todo.isComplete ? "todo-list__todo--checked" : ""} ">${todo.content}
-                <input type="checkbox" ${todo.isComplete ? "checked" : ""} >
-                    <span class="checkmark"></span>
-                    <span class="todo-list__cross"></span>
-            </label>
+        const div = document.createElement("div");
+        div.classList.add("todo-list__todo");
+        if (todo.isComplete) div.classList.add("todo-list__todo--checked");
+        div.innerHTML = `
+        <p class="todo-list__todo-text">${todo.content}</p>       
+        <input type="checkbox" ${todo.isComplete ? "checked" : ""} >
+        <span class="checkmark"></span>
+        <span class="todo-list__cross"></span>
         `
-        return span;
+        return div;
     }
 }
