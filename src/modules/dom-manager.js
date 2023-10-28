@@ -31,7 +31,20 @@ export default class DomManager {
     }
 
     handleTodoClick = e => {
-        console.log(e.target);
+        const clickedElement = e.target;
+        switch (true) {
+            case clickedElement.classList.contains("todo-list__todo-text"):
+                console.log("text clicked");
+                break;
+            case clickedElement.tagName === "INPUT":
+                console.log("mark clicked");
+                break;
+            case clickedElement.classList.contains("todo-list__cross"):
+                console.log("cross clicked");
+                break;
+            default:
+                console.log("todo clicked");
+        }
     }
 
     handleFilterClick = e => {
@@ -51,7 +64,7 @@ export default class DomManager {
         div.innerHTML = `
         <p class="todo-list__todo-text">${todo.content}</p>       
         <label>
-            <input id="todo-checkbox" name="todo-checkbox" type="checkbox" ${todo.isComplete ? "checked" : ""} />
+            <input id="todo-checkbox" class="todo-checkbox" name="todo-checkbox" type="checkbox" ${todo.isComplete ? "checked" : ""} />
             <span class="checkmark"></span>
         </label>
         <span class="todo-list__cross"></span>
