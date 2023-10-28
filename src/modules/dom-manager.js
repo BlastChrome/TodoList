@@ -49,8 +49,10 @@ export default class DomManager {
         if (todo.isComplete) div.classList.add("todo-list__todo--checked");
         div.innerHTML = `
         <p class="todo-list__todo-text">${todo.content}</p>       
-        <input name="todo-checkbox" type="checkbox" ${todo.isComplete ? "checked" : ""} />
-        <span class="checkmark"></span>
+        <label>
+            <input id="todo-checkbox" name="todo-checkbox" type="checkbox" ${todo.isComplete ? "checked" : ""} />
+            <span class="checkmark"></span>
+        </label>
         <span class="todo-list__cross"></span>
         `
         return div;
