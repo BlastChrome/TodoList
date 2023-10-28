@@ -46,6 +46,7 @@ export default class DomManager {
     createTodoElement = todo => {
         const div = document.createElement("div");
         div.classList.add("todo-list__todo");
+        div.dataset.id = todo.id;
         if (todo.isComplete) div.classList.add("todo-list__todo--checked");
         div.innerHTML = `
         <p class="todo-list__todo-text">${todo.content}</p>       
