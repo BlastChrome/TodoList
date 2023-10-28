@@ -16,6 +16,5 @@ export default class TodoManager {
         const todo = new Todo(text);
         this.todo_list.add(todo);
         pubsub.publish("todoAdded", todo);
-        console.log(this.todo_list);
     }
 }
