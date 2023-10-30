@@ -8,7 +8,8 @@ export default class DomManager {
     }
 
     subscribe = () => {
-        pubsub.subscribe("listUpdated", this.render);
+        pubsub.subscribe("listUpdated", this.renderList);
+        pubsub.subscribe("todoUpdated", this.renderTodo);
     }
 
     cacheDom = () => {
@@ -57,9 +58,22 @@ export default class DomManager {
         // TODO
     }
 
-    render = list => {
+    renderList = list => {
         this.dom_list.innerHTML = '';
         list.forEach(todo => { this.dom_list.appendChild(this.createTodoElement(todo)); });
+    }
+
+    renderTodo = todo => {
+        let foundElement = Array.from(this.dom_list.childNodes).find(todoEl => {
+            if (todoEl.dataset.id == todo.id) {
+                return todoEl;
+            }
+        });
+
+        if (foundElement) {
+            const newElement = this.createTodoElement(todo);
+            this.dom_list.replaceChild(newElement, foundElement);
+        }
     }
 
     createTodoElement = todo => {
