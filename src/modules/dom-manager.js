@@ -36,19 +36,15 @@ export default class DomManager {
         switch (true) {
             case clickedElement.classList.contains("todo-list__todo-text"):
                 console.log("clicked Text");
-                console.log(id)
                 break;
             case clickedElement.tagName === "INPUT":
                 console.log("mark clicked");
-                console.log(id)
                 break;
             case clickedElement.classList.contains("todo-list__cross"):
                 console.log("cross clicked");
-                console.log(id)
                 break;
             default:
                 console.log("todo clicked");
-                console.log(id)
         }
     }
 
