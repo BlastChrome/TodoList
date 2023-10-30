@@ -42,7 +42,7 @@ export default class DomManager {
                 pubsub.publish("todoCompleteClicked", id);
                 break;
             case clickedElement.classList.contains("todo-list__cross"):
-                console.log("cross clicked");
+                pubsub.publish("deleteTodoClicked", id);
                 break;
             default:
                 console.log("todo clicked");

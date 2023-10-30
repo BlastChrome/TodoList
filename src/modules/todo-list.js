@@ -12,4 +12,10 @@ export default class TodoList {
     find = id => {
         return this.list.find(todo => { return todo.id == id; })
     }
+
+    delete = id => {
+        let foundTodo = this.find(id);
+        this.list.splice(this.list.indexOf(foundTodo), 1);
+        pubsub.publish("listUpdated", this.list);
+    }
 }

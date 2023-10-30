@@ -11,6 +11,7 @@ export default class TodoManager {
     subscribe = () => {
         pubsub.subscribe("inputValidated", this.addTodoToList);
         pubsub.subscribe("todoCompleteClicked", this.toggleTodoComplete);
+        pubsub.subscribe("deleteTodoClicked", this.deleteTodo);
     }
 
     addTodoToList = text => {
@@ -23,5 +24,9 @@ export default class TodoManager {
         const foundTodo = this.todo_list.find(id);
         foundTodo.toggleComplete();
         pubsub.publish("todoUpdated", foundTodo);
+    }
+
+    deleteTodo = id => {
+        this.todo_list.delete(id);
     }
 }
