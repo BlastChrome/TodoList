@@ -8,4 +8,8 @@ export default class TodoList {
         this.list.push(todo);
         pubsub.publish("listUpdated", this.list);
     }
+
+    find = id => {
+        return this.list.find(todo => { return todo.id == id; })
+    }
 }

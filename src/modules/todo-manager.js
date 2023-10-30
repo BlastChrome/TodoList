@@ -10,11 +10,17 @@ export default class TodoManager {
 
     subscribe = () => {
         pubsub.subscribe("inputValidated", this.addTodoToList);
+        pubsub.subscribe("todoCompleteClicked", this.toggleTodoComplete);
     }
 
     addTodoToList = text => {
         const todo = new Todo(text);
         this.todo_list.add(todo);
         pubsub.publish("todoAdded", todo);
+    }
+
+    toggleTodoComplete = id => {
+        const foundTodo = this.todo_list.find(id);
+        console.log(foundTodo);
     }
 }
