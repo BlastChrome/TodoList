@@ -6,4 +6,8 @@ export default class Todo {
         this.id = Date.now() + Math.random().toString(16).slice(2);;
         this.timestamp = new Date().toISOString();
     }
+
+    toggleComplete = () => {
+        this.isComplete != true ? this.isComplete = true : this.isComplete = false;
+    }
 }

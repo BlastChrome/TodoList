@@ -1,6 +1,6 @@
 import { pubsub } from "../pubsub.js"
 import Todo from "./todo.js";
-import TodoList from "./todo-list";
+import TodoList from "./todo-list.js";
 
 export default class TodoManager {
     constructor() {
@@ -21,6 +21,7 @@ export default class TodoManager {
 
     toggleTodoComplete = id => {
         const foundTodo = this.todo_list.find(id);
-        console.log(foundTodo);
+        foundTodo.toggleComplete();
+        pubsub.publish("todoUpdated", foundTodo);
     }
 }
