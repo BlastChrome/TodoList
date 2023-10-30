@@ -1,6 +1,7 @@
 import { pubsub } from "../pubsub.js";
 
 export default class DomManager {
+
     constructor() {
         this.cacheDom();
         this.initEvents();
@@ -55,7 +56,24 @@ export default class DomManager {
     }
 
     handleFilterClick = e => {
-        // TODO
+        const clickedElement = e.target;
+        switch (true) {
+            case clickedElement.classList.contains("menu__filter__all"):
+                console.log("clicked all");
+                break;
+            case clickedElement.classList.contains("menu__filter__active"):
+                console.log('clicked active');
+                break;
+            case clickedElement.classList.contains("menu__filter__completed"):
+                console.log("clicked completed");
+                break;
+            case clickedElement.classList.contains("menu__clear-completed"):
+                console.log("clicked clear-complete");
+                break;
+            default:
+                console.log("clicked menu");
+                break;
+        }
     }
 
     renderList = list => {
