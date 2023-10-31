@@ -9,6 +9,7 @@ export default class DomManager {
 
     subscribe = () => {
         pubsub.subscribe("listUpdated", this.renderList);
+        pubsub.subscribe("listUpdated", this.renderListLength);
         pubsub.subscribe("todoUpdated", this.renderTodo);
         pubsub.subscribe("filterApplied", this.changeHighlightedFilter)
     }
@@ -18,6 +19,8 @@ export default class DomManager {
         this.input = document.getElementById("todo-input");
         this.dom_list = document.getElementById("todo-list");
         this.filter_menu = document.getElementById("menu");
+        this.filterButtons = document.getElementsByClassName('menu__filter__text');
+        this.items_left = document.getElementById("items-left");
     }
 
     initEvents = () => {
@@ -79,13 +82,12 @@ export default class DomManager {
     }
 
     changeHighlightedFilter = filter => {
-        // Clear active class from all filter buttons
-        const filterButtons = this.filter_menu.getElementsByClassName('menu__filter__text');
-        Array.from(filterButtons).forEach(button => {
+
+        Array.from(this.filterButtons).forEach(button => {
             button.classList.remove('menu__filter__text--active');
         });
 
-        Array.from(filterButtons).find(button => {
+        Array.from(this.filterButtons).find(button => {
             if (button.classList.contains(`menu__filter__${filter}`)) {
                 button.classList.add('menu__filter__text--active');
             }
@@ -109,6 +111,10 @@ export default class DomManager {
             const newElement = this.createTodoElement(todo);
             this.dom_list.replaceChild(newElement, foundElement);
         }
+    }
+
+    renderListLength = list => {
+        this.items_left.innerText = `${list.length} items left`;
     }
 
     createTodoElement = todo => {

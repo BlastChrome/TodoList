@@ -41,7 +41,6 @@ export default class TodoManager {
             this.currentFilter = 'completed';
             pubsub.publish("listUpdated", this.todo_list.filterCompleted());
             pubsub.publish("filterApplied", this.currentFilter);
-
         }
     }
 

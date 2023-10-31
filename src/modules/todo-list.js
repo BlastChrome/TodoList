@@ -37,8 +37,7 @@ export default class TodoList {
     }
 
     clearCompleted = () => {
-        let filteredList = this.filterActive();
-        this.list = filteredList;
-        return filteredList;
+        this.list = this.filterActive();
+        return this.list;
     }
 }
