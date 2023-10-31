@@ -15,12 +15,14 @@
         box-shadow: $shadow;
         color: $color-purple;
 
-        &-error {
+        &--error {
             border: 1px solid red;
+            background: #ffe2e2;
         }
 
-        &-success {
+        &--success {
             border: 1px solid green;
+            background: #e2fff1;
         }
 
         &::placeholder {
