@@ -18,4 +18,20 @@ export default class TodoList {
         this.list.splice(this.list.indexOf(foundTodo), 1);
         pubsub.publish("listUpdated", this.list);
     }
+
+    filterCompleted = () => {
+        return this.list.filter(todo => {
+            return todo.isComplete == true;
+        })
+    }
+
+    filterActive = () => {
+        return this.list.filter(todo => {
+            return todo.isComplete != true;
+        })
+    }
+
+    filterAll = () => {
+        return this.list;
+    }
 }

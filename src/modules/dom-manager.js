@@ -50,30 +50,30 @@ export default class DomManager {
         }
     }
 
-    getClickedTodosId = clickedElement => {
-        const todoItem = clickedElement.closest('.todo-list__todo');
-        return todoItem ? todoItem.dataset.id : null;
-    }
-
     handleFilterClick = e => {
         const clickedElement = e.target;
         switch (true) {
             case clickedElement.classList.contains("menu__filter__all"):
-                console.log("clicked all");
+                pubsub.publish("filterAllClicked");
                 break;
             case clickedElement.classList.contains("menu__filter__active"):
-                console.log('clicked active');
+                pubsub.publish("filterActiveClicked");
                 break;
             case clickedElement.classList.contains("menu__filter__completed"):
-                console.log("clicked completed");
+                pubsub.publish("filterCompletedClicked");
                 break;
             case clickedElement.classList.contains("menu__clear-completed"):
-                console.log("clicked clear-complete");
+                console.log("clear complete clicked");
                 break;
             default:
                 console.log("clicked menu");
                 break;
         }
+    }
+
+    getClickedTodosId = clickedElement => {
+        const todoItem = clickedElement.closest('.todo-list__todo');
+        return todoItem ? todoItem.dataset.id : null;
     }
 
     renderList = list => {

@@ -5,6 +5,7 @@ import TodoList from "./todo-list.js";
 export default class TodoManager {
     constructor() {
         this.todo_list = new TodoList();
+        this.currentFilter = 'all';
         this.subscribe();
     }
 
@@ -12,6 +13,9 @@ export default class TodoManager {
         pubsub.subscribe("inputValidated", this.addTodoToList);
         pubsub.subscribe("todoCompleteClicked", this.toggleTodoComplete);
         pubsub.subscribe("deleteTodoClicked", this.deleteTodo);
+        pubsub.subscribe("filterCompletedClicked", this.filterCompleted);
+        pubsub.subscribe("filterActiveClicked", this.filterActive);
+        pubsub.subscribe("filterAllClicked", this.filterAll);
     }
 
     addTodoToList = text => {
@@ -28,5 +32,20 @@ export default class TodoManager {
 
     deleteTodo = id => {
         this.todo_list.delete(id);
+    }
+
+    filterCompleted = () => {
+        pubsub.publish("listUpdated", this.todo_list.filterCompleted());
+        this.currentFilter = 'completed';
+    }
+
+    filterActive = () => {
+        pubsub.publish('listUpdated', this.todo_list.filterActive());
+        this.currentFilter = "active";
+    }
+
+    filterAll = () => {
+        pubsub.publish("listUpdated", this.todo_list.filterAll());
+        this.currentFilter = 'all';
     }
 }
