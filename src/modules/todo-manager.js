@@ -38,25 +38,31 @@ export default class TodoManager {
     filterCompleted = () => {
         let filteredList = this.todo_list.filterCompleted();
         if (filteredList.length > 0) {
-            pubsub.publish("listUpdated", this.todo_list.filterCompleted());
             this.currentFilter = 'completed';
+            pubsub.publish("listUpdated", this.todo_list.filterCompleted());
+            pubsub.publish("filterApplied", this.currentFilter);
+
         }
     }
 
     filterActive = () => {
         let filteredList = this.todo_list.filterActive();
         if (filteredList.length > 0) {
-            pubsub.publish('listUpdated', this.todo_list.filterActive());
             this.currentFilter = "active";
+            pubsub.publish('listUpdated', this.todo_list.filterActive());
+            pubsub.publish("filterApplied", this.currentFilter);
         }
     }
 
     filterAll = () => {
-        pubsub.publish("listUpdated", this.todo_list.filterAll());
         this.currentFilter = 'all';
+        pubsub.publish("listUpdated", this.todo_list.filterAll());
+        pubsub.publish("filterApplied", this.currentFilter);
     }
 
     clearCompleted = () => {
+        this.currentFilter = 'all';
         pubsub.publish("listUpdated", this.todo_list.clearCompleted());
+        pubsub.publish("filterApplied", this.currentFilter);
     }
 }

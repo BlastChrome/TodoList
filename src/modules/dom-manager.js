@@ -10,6 +10,7 @@ export default class DomManager {
     subscribe = () => {
         pubsub.subscribe("listUpdated", this.renderList);
         pubsub.subscribe("todoUpdated", this.renderTodo);
+        pubsub.subscribe("filterApplied", this.changeHighlightedFilter)
     }
 
     cacheDom = () => {
@@ -51,6 +52,7 @@ export default class DomManager {
 
     handleFilterClick = e => {
         const clickedElement = e.target;
+
         switch (true) {
             case clickedElement.classList.contains("menu__filter__all"):
                 pubsub.publish("filterAllClicked");
@@ -70,9 +72,25 @@ export default class DomManager {
         }
     }
 
+
     getClickedTodosId = clickedElement => {
         const todoItem = clickedElement.closest('.todo-list__todo');
         return todoItem ? todoItem.dataset.id : null;
+    }
+
+    changeHighlightedFilter = filter => {
+        // Clear active class from all filter buttons
+        const filterButtons = this.filter_menu.getElementsByClassName('menu__filter__text');
+        Array.from(filterButtons).forEach(button => {
+            button.classList.remove('menu__filter__text--active');
+        });
+
+        Array.from(filterButtons).find(button => {
+            if (button.classList.contains(`menu__filter__${filter}`)) {
+                button.classList.add('menu__filter__text--active');
+            }
+        })
+
     }
 
     renderList = list => {
