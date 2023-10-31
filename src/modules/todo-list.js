@@ -1,4 +1,5 @@
 import { pubsub } from "../pubsub.js"
+
 export default class TodoList {
     constructor() {
         this.list = [];

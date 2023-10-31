@@ -1,7 +1,6 @@
 import { pubsub } from "../pubsub.js";
 
 export default class DomManager {
-
     constructor() {
         this.cacheDom();
         this.initEvents();
