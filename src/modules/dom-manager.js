@@ -63,7 +63,7 @@ export default class DomManager {
                 pubsub.publish("filterCompletedClicked");
                 break;
             case clickedElement.classList.contains("menu__clear-completed"):
-                console.log("clear complete clicked");
+                pubsub.publish("clearCompletedClicked");
                 break;
             default:
                 console.log("clicked menu");
@@ -112,4 +112,5 @@ export default class DomManager {
         `
         return div;
     }
+
 }

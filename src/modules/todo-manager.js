@@ -16,6 +16,7 @@ export default class TodoManager {
         pubsub.subscribe("filterCompletedClicked", this.filterCompleted);
         pubsub.subscribe("filterActiveClicked", this.filterActive);
         pubsub.subscribe("filterAllClicked", this.filterAll);
+        pubsub.subscribe("clearCompletedClicked", this.clearCompleted);
     }
 
     addTodoToList = text => {
@@ -47,5 +48,9 @@ export default class TodoManager {
     filterAll = () => {
         pubsub.publish("listUpdated", this.todo_list.filterAll());
         this.currentFilter = 'all';
+    }
+
+    clearCompleted = () => {
+        pubsub.publish("listUpdated", this.todo_list.clearCompleted());
     }
 }
