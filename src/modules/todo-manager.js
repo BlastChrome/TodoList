@@ -21,18 +21,18 @@ export default class TodoManager {
 
     addTodoToList = text => {
         const todo = new Todo(text);
-        this.todo_list.add(todo);
+        this.todo_list.addTodo(todo);
         pubsub.publish("todoAdded", todo);
     }
 
     toggleTodoComplete = id => {
-        const foundTodo = this.todo_list.find(id);
+        const foundTodo = this.todo_list.findById(id);
         foundTodo.toggleComplete();
         pubsub.publish("todoUpdated", foundTodo);
     }
 
     deleteTodo = id => {
-        this.todo_list.delete(id);
+        this.todo_list.deleteById(id);
     }
 
     filterCompleted = () => {

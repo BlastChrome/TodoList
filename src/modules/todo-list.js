@@ -4,26 +4,25 @@ export default class TodoList {
         this.list = [];
     }
 
-    add = todo => {
+    addTodo = todo => {
         this.list.push(todo);
         pubsub.publish("listUpdated", this.list);
     }
 
-    find = id => {
-        return this.list.find(todo => { return todo.id == id; })
-    }
-
-    delete = id => {
-        let foundTodo = this.find(id);
+    deleteById = id => {
+        let foundTodo = this.findById(id);
         this.list.splice(this.list.indexOf(foundTodo), 1);
         pubsub.publish("listUpdated", this.list);
+    }
+
+    findById = id => {
+        return this.list.find(todo => { return todo.id == id; })
     }
 
     filterCompleted = () => {
         return this.list.filter(todo => {
             return todo.isComplete == true;
         })
-
     }
 
     filterActive = () => {
