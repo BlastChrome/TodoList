@@ -51,6 +51,12 @@
         line-height: normal;
         letter-spacing: -0.25px;
 
+        &--dark {
+            background: $color-dark-purple-2;
+            border-bottom: 1px solid $color-dark-purple-2;
+            color: $color-dark-purple-3;
+        }
+
 
         label {
             margin-right: 10px;

@@ -12,6 +12,10 @@
         background: $color-light-grey;
     }
 
+    &--dark {
+        background: $color-dark-purple;
+    }
+
     .flex {
         display: flex;
         justify-content: space-between;

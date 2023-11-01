@@ -20,6 +20,11 @@
             background: #ffe2e2;
         }
 
+        &--dark {
+            background: $color-dark-purple-2;
+            color: $color-white;
+        }
+
         &--success {
             border: 1px solid green;
             background: #e2fff1;

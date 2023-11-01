@@ -12,6 +12,11 @@
     border-radius: 5px;
     cursor: pointer;
 
+    &--dark {
+        background: $color-dark-purple-2;
+        color: $color-dark-purple-3;
+    }
+
     &__filter {
         display: flex;
         min-width: 130px;
