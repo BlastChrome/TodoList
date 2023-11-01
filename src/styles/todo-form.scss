@@ -1,41 +1,43 @@
-.todo-form {
+.body {
+    .todo-form {
 
-    &__input {
-        width: 100%;
-        border-radius: 5px;
-        background: $color-white;
-        margin-top: 47px;
-        border: none;
-        padding: 23px 72px;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        letter-spacing: -0.25px;
-        box-shadow: $shadow;
-        color: $color-purple;
+        &__input {
+            width: 100%;
+            border-radius: 5px;
+            background: $color-white;
+            margin-top: 47px;
+            border: none;
+            padding: 23px 72px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.25px;
+            box-shadow: $shadow;
+            color: $color-purple;
 
-        &--error {
-            border: 1px solid red;
-            background: #ffe2e2;
-        }
+            &--error {
+                border: 1px solid red;
+                background: #ffe2e2;
+            }
 
-        &--dark {
-            background: $color-dark-purple-2;
-            color: $color-white;
-        }
+            &--dark {
+                background: $color-dark-purple-2;
+                color: $color-white;
+            }
 
-        &--success {
-            border: 1px solid green;
-            background: #e2fff1;
-        }
+            &--success {
+                border: 1px solid green;
+                background: #e2fff1;
+            }
 
-        &::placeholder {
-            color: $color-grey;
-        }
+            &::placeholder {
+                color: $color-grey;
+            }
 
-        &:focus {
-            outline: none;
+            &:focus {
+                outline: none;
+            }
         }
     }
 }

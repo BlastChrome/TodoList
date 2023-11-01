@@ -23,3 +23,39 @@ $shadow-2: 0px 30px 20px 5px rgba(194, 195, 214, 0.5);
 
 // Animation Vars 
 $animation-timing: all 0.3s ease-in-out;
+
+
+// Light Mode Colors
+$light-mode: (
+    bg-image: url('../../assets/images/bg-light.jpg'),
+    bg-gradient: linear-gradient(225deg, #5596FF 0%, #AC2DEB 100%),
+    todo-gradient: linear-gradient(225deg, #55DDFF 0%, #C058F3 100%),
+    color-white: #fff,
+    color-light-grey: #F5F5F5,
+    color-grey: #9495A5,
+    color-grey-2: #979797,
+    color-black: #000,
+    color-purple: #494C6B,
+    color-blue: #3A7CFD,
+    color-light-purple: #E3E4F1,
+    color-light-purple-2: #D1D2DA,
+);
+
+// Dark Mode Colors
+$dark-mode: (
+    bg-image: url('../../assets/images/bg-dark.jpg'),
+    bg-gradient: linear-gradient(225deg, #1F1D2B 0%, #2E2C3A 100%),
+    todo-gradient: linear-gradient(225deg, #1F1D2B 0%, #2E2C3A 100%),
+    color-white: #fff,
+    color-light-grey: #F5F5F5,
+    color-grey: #9495A5,
+    color-dark-purple: #171823,
+    color-dark-purple-2: #25273D,
+    color-dark-purple-3: #5B5E7E,
+    color-grey-2: #979797,
+    color-black: #000,
+    color-purple: #494C6B,
+    color-blue: #3A7CFD,
+    color-light-purple: #E3E4F1,
+    color-light-purple-2: #D1D2DA,
+);
