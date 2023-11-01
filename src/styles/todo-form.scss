@@ -1,10 +1,30 @@
 .body {
+
+    &--light {
+        .todo-form {
+            &__input {
+                background: map-get($light-mode, 'color-white');
+                color: map-get($light-mode, 'color-purple');
+                box-shadow: map-get($light-mode, 'shadow');
+            }
+        }
+    }
+
+    &--dark {
+        .todo-form {
+            &__input {
+                background: map-get($dark-mode, 'color-dark-purple-2');
+                color: map-get($dark-mode, 'color-white');
+                box-shadow: map-get($dark-mode, 'shadow');
+            }
+        }
+    }
+
     .todo-form {
 
         &__input {
             width: 100%;
             border-radius: 5px;
-            background: $color-white;
             margin-top: 47px;
             border: none;
             padding: 23px 72px;
@@ -13,23 +33,17 @@
             font-weight: 400;
             line-height: normal;
             letter-spacing: -0.25px;
-            box-shadow: $shadow;
-            color: $color-purple;
 
             &--error {
                 border: 1px solid red;
                 background: #ffe2e2;
             }
 
-            &--dark {
-                background: $color-dark-purple-2;
-                color: $color-white;
-            }
-
             &--success {
                 border: 1px solid green;
                 background: #e2fff1;
             }
+
 
             &::placeholder {
                 color: $color-grey;

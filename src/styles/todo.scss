@@ -1,133 +1,231 @@
-.todo-list {
-    margin-top: 23px;
-    cursor: pointer;
+.body {
 
-    &__cross {
-        width: 18px;
-        height: 18px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: $animation-timing;
-        transform: translate(-136%, 118%) scale(0);
-        cursor: pointer;
-        z-index: 2;
+    &--light {
+        .todo-list {
+            &__cross {
 
-        &:after,
-        &:before {
-            content: "";
-            position: absolute;
-            width: 1px;
-            height: 22px;
-            left: 0;
-            top: 0;
-            background: $color-purple;
-        }
-
-        &:after {
-            transform: translate(9px, -1px) rotate(45deg);
-        }
-
-        &:before {
-            transform: translate(9px, -1px) rotate(-45deg);
-        }
-    }
-
-    &__todo {
-        position: relative;
-        cursor: pointer;
-        user-select: none;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        border-radius: 5px;
-        background: $color-white;
-        border-bottom: 1px solid $color-light-purple;
-        padding: 22.4px 72.3px;
-        color: $color-purple;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        letter-spacing: -0.25px;
-
-        &--dark {
-            background: $color-dark-purple-2;
-            border-bottom: 1px solid $color-dark-purple-2;
-            color: $color-dark-purple-3;
-        }
-
-
-        label {
-            margin-right: 10px;
-        }
-
-
-        input {
-            opacity: 0;
-            cursor: pointer;
-            position: absolute;
-            left: 5.8%;
-            z-index: 1;
-            transform: translate(0%, 0%) scale(1);
-            top: 39%;
-
-            &:checked~.checkmark {
-                background: $todo-gradient;
-                border: 1px solid $todo-gradient;
-
-                &:after {
-                    display: block;
+                &:after,
+                &:before {
+                    background: $color-purple;
                 }
             }
+
+            &__todo {
+                background: $color-white;
+                border-bottom: 1px solid $color-light-purple;
+                color: $color-purple;
+
+                input {
+                    &:checked~.checkmark {
+                        background: $todo-gradient;
+                        border: 1px solid $todo-gradient;
+                    }
+                }
+            }
+
+            .checkmark {
+
+                background-color: transparent;
+                border: 1px solid $color-light-purple;
+
+                &--checked {
+                    background: $todo-gradient;
+                }
+
+
+                &--unchecked {
+                    background: $color-light-purple;
+                }
+
+                /* Create the checkmark/indicator (hidden when not checked) */
+                &:after {
+                    border: solid $color-white;
+                }
+            }
+
+            &__todo--checked {
+                color: $color-light-purple-2;
+            }
         }
+    }
 
-        /* Create a custom checkbox */
-        .checkmark {
+    &--dark {
+        .todo-list {
+            &__cross {
+
+                &:after,
+                &:before {
+                    background: $color-white;
+                }
+            }
+
+            &__todo {
+                border-bottom: 1px solid $color-dark-purple-2;
+                background: $color-dark-purple-2;
+                color: $color-dark-purple-5;
+
+                input {
+                    &:checked~.checkmark {
+                        background: $todo-gradient;
+                        border: 1px solid $color-grey;
+                    }
+                }
+
+            }
+
+            .checkmark {
+
+                background-color: transparent;
+                border: 1px solid $color-grey;
+
+                &--checked {
+                    background: $todo-gradient;
+                }
+
+
+                &--unchecked {
+                    background: $color-light-purple;
+                }
+
+                /* Create the checkmark/indicator (hidden when not checked) */
+                &:after {
+                    border: solid $color-white;
+                }
+            }
+
+            &__todo--checked {
+                color: $color-grey;
+            }
+
+        }
+    }
+
+
+
+    .todo-list {
+        margin-top: 23px;
+        cursor: pointer;
+
+        &__cross {
+            width: 18px;
+            height: 18px;
             position: absolute;
-            top: 50%;
-            left: 0;
-            height: 25px;
-            width: 25px;
-            background-color: transparent;
-            border: 1px solid $color-light-purple;
-            border-radius: 50%;
-            transform: translate(100%, -55%);
+            right: 0;
+            top: 0;
             transition: $animation-timing;
+            transform: translate(-136%, 118%) scale(0);
+            cursor: pointer;
+            z-index: 2;
 
-            &--checked {
-                background: $todo-gradient;
-            }
-
-
-            &--unchecked {
-                background: $color-light-purple;
-            }
-
-            /* Create the checkmark/indicator (hidden when not checked) */
-            &:after {
+            &:after,
+            &:before {
                 content: "";
                 position: absolute;
-                left: 10px;
-                top: 7px;
-                width: 2px;
-                height: 7px;
-                border: solid $color-white;
-                border-width: 0 2px 2px 0;
-                transform: rotate(45deg);
-                display: none; // re-add this line
+                width: 1px;
+                height: 22px;
+                left: 0;
+                top: 0;
+                // background: $color-purple;
+            }
+
+            &:after {
+                transform: translate(9px, -1px) rotate(45deg);
+            }
+
+            &:before {
+                transform: translate(9px, -1px) rotate(-45deg);
             }
         }
 
+        &__todo {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border-radius: 5px;
+            // background: $color-white;
+            // border-bottom: 1px solid $color-light-purple;
+            // color: $color-purple;
+            padding: 22.4px 72.3px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.25px;
+
+            label {
+                margin-right: 10px;
+            }
+
+            input {
+                opacity: 0;
+                cursor: pointer;
+                position: absolute;
+                left: 5.8%;
+                z-index: 1;
+                transform: translate(0%, 0%) scale(1);
+                top: 39%;
+
+                &:checked~.checkmark {
+                    // background: $todo-gradient;
+                    // border: 1px solid $todo-gradient;
+
+                    &:after {
+                        display: block;
+                    }
+                }
+            }
+
+            /* Create a custom checkbox */
+            .checkmark {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                // background-color: transparent;
+                // border: 1px solid $color-light-purple;
+                border-radius: 50%;
+                transform: translate(100%, -55%);
+                transition: $animation-timing;
+
+                &--checked {
+                    // background: $todo-gradient;
+                }
 
 
-        &:hover .todo-list__cross {
-            transform: translate(-136%, 118%) scale(1);
+                &--unchecked {
+                    // background: $color-light-purple;
+                }
+
+                /* Create the checkmark/indicator (hidden when not checked) */
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 10px;
+                    top: 7px;
+                    width: 2px;
+                    height: 7px;
+                    // border: solid $color-white;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                    display: none;
+                }
+            }
+
+
+
+            &:hover .todo-list__cross {
+                transform: translate(-136%, 118%) scale(1);
+            }
+        }
+
+        &__todo--checked {
+            text-decoration: line-through;
+            // color: $color-light-purple-2;
         }
     }
 
-    &__todo--checked {
-        text-decoration: line-through;
-        color: $color-light-purple-2;
-    }
 }
