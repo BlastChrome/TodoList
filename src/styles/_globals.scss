@@ -9,11 +9,21 @@
     height: 100vh;
 
     &--light {
-        background: $color-light-grey;
+        // background: $color-light-grey;
+        background: map-get($light-mode, 'color-light-grey');
+
+        .shadow-wrapper {
+            box-shadow: map-get($light-mode, 'shadow');
+        }
     }
 
     &--dark {
-        background: $color-dark-purple;
+        // background: $color-dark-purple;
+        background: map-get($dark-mode, 'color-dark-purple');
+
+        .shadow-wrapper {
+            box-shadow: map-get($dark-mode, 'shadow');
+        }
     }
 
     .flex {
@@ -22,9 +32,6 @@
         align-items: center;
     }
 
-    .shadow-wrapper {
-        box-shadow: $shadow;
-    }
 
     svg {
         cursor: pointer;

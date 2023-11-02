@@ -6,19 +6,19 @@
 
                 &:after,
                 &:before {
-                    background: $color-purple;
+                    background: map-get($light-mode, 'color-purple');
                 }
             }
 
             &__todo {
                 background: $color-white;
-                border-bottom: 1px solid $color-light-purple;
+                border-bottom: 1px solid map-get($light-mode, 'color-light-purple');
                 color: $color-purple;
 
                 input {
                     &:checked~.checkmark {
-                        background: $todo-gradient;
-                        border: 1px solid $todo-gradient;
+                        background: map-get($light-mode, 'todo-gradient');
+                        border: 1px solid map-get($light-mode, 'todo-gradient');
                     }
                 }
             }
@@ -26,25 +26,26 @@
             .checkmark {
 
                 background-color: transparent;
-                border: 1px solid $color-light-purple;
+                border: 1px solid map-get($light-mode, 'color-light-purple');
 
                 &--checked {
-                    background: $todo-gradient;
+                    background: map-get($light-mode, 'todo-gradient');
                 }
 
 
                 &--unchecked {
-                    background: $color-light-purple;
+                    background: map-get($light-mode, 'color-light-purple');
                 }
 
                 /* Create the checkmark/indicator (hidden when not checked) */
                 &:after {
-                    border: solid $color-white;
+                    border: solid map-get($light-mode, 'color-white');
                 }
             }
 
             &__todo--checked {
-                color: $color-light-purple-2;
+                color: map-get($light-mode, 'color-light-purple-2');
+                text-decoration: line-through;
             }
         }
     }
@@ -55,19 +56,19 @@
 
                 &:after,
                 &:before {
-                    background: $color-white;
+                    background: map-get($dark-mode, 'color-white');
                 }
             }
 
             &__todo {
-                border-bottom: 1px solid $color-dark-purple-2;
-                background: $color-dark-purple-2;
-                color: $color-dark-purple-5;
+                border-bottom: 1px solid map-get($dark-mode, 'color-dark-purple-6');
+                background: map-get($dark-mode, 'color-dark-purple-2');
+                color: map-get($dark-mode, 'color-dark-purple-5');
 
                 input {
                     &:checked~.checkmark {
                         background: $todo-gradient;
-                        border: 1px solid $color-grey;
+                        border: 1px solid map-get($dark-mode, 'todo-gradient');
                     }
                 }
 
@@ -79,22 +80,25 @@
                 border: 1px solid $color-grey;
 
                 &--checked {
-                    background: $todo-gradient;
+                    // background: $todo-gradient;
+                    background: map-get($dark-mode, 'todo-gradient');
+                    color: map-get($dark-mode, 'color-dark-purple-3');
                 }
 
 
                 &--unchecked {
-                    background: $color-light-purple;
+                    background: map-get($dark-mode, 'color-dark-purple-2');
                 }
 
                 /* Create the checkmark/indicator (hidden when not checked) */
                 &:after {
-                    border: solid $color-white;
+                    border: solid map-get($dark-mode, 'color-white');
                 }
             }
 
             &__todo--checked {
-                color: $color-grey;
+                color: map-get($dark-mode, 'color-light-purple-3');
+                text-decoration: line-through;
             }
 
         }
@@ -125,7 +129,6 @@
                 height: 22px;
                 left: 0;
                 top: 0;
-                // background: $color-purple;
             }
 
             &:after {
@@ -145,9 +148,6 @@
             align-items: center;
             width: 100%;
             border-radius: 5px;
-            // background: $color-white;
-            // border-bottom: 1px solid $color-light-purple;
-            // color: $color-purple;
             padding: 22.4px 72.3px;
             font-size: 18px;
             font-style: normal;
@@ -169,8 +169,6 @@
                 top: 39%;
 
                 &:checked~.checkmark {
-                    // background: $todo-gradient;
-                    // border: 1px solid $todo-gradient;
 
                     &:after {
                         display: block;
@@ -185,20 +183,14 @@
                 left: 0;
                 height: 25px;
                 width: 25px;
-                // background-color: transparent;
-                // border: 1px solid $color-light-purple;
                 border-radius: 50%;
                 transform: translate(100%, -55%);
                 transition: $animation-timing;
 
-                &--checked {
-                    // background: $todo-gradient;
-                }
+                &--checked {}
 
 
-                &--unchecked {
-                    // background: $color-light-purple;
-                }
+                &--unchecked {}
 
                 /* Create the checkmark/indicator (hidden when not checked) */
                 &:after {
@@ -208,7 +200,6 @@
                     top: 7px;
                     width: 2px;
                     height: 7px;
-                    // border: solid $color-white;
                     border-width: 0 2px 2px 0;
                     transform: rotate(45deg);
                     display: none;
@@ -220,11 +211,6 @@
             &:hover .todo-list__cross {
                 transform: translate(-136%, 118%) scale(1);
             }
-        }
-
-        &__todo--checked {
-            text-decoration: line-through;
-            // color: $color-light-purple-2;
         }
     }
 

@@ -14,7 +14,7 @@
         .todo-form {
             &__input {
                 background: map-get($dark-mode, 'color-dark-purple-2');
-                color: map-get($dark-mode, 'color-white');
+                color: map-get($dark-mode, 'color-dark-purple-5');
                 box-shadow: map-get($dark-mode, 'shadow');
             }
         }
