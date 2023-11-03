@@ -12,21 +12,26 @@ export default class DomManager {
         pubsub.subscribe("listUpdated", this.renderListLength);
         pubsub.subscribe("todoUpdated", this.renderTodo);
         pubsub.subscribe("filterApplied", this.changeHighlightedFilter)
+        pubsub.subscribe("toggleTheme", this.changeTheme)
     }
 
     cacheDom = () => {
+        this.body = document.getElementById("body");
         this.form = document.getElementById("todo-form");
+        this.themeBtn = document.getElementById("theme-btn");
         this.input = document.getElementById("todo-input");
         this.dom_list = document.getElementById("todo-list");
         this.filter_menu = document.getElementById("menu");
         this.filterButtons = document.getElementsByClassName('menu__filter__text');
         this.items_left = document.getElementById("items-left");
+
     }
 
     initEvents = () => {
         this.form.addEventListener('submit', this.handleFormSubmit);
         this.dom_list.addEventListener('click', this.handleTodoClick);
         this.filter_menu.addEventListener('click', this.handleFilterClick);
+        this.themeBtn.addEventListener('click', this.handleThemeBtnClick);
     }
 
     handleFormSubmit = e => {
@@ -75,6 +80,9 @@ export default class DomManager {
         }
     }
 
+    handleThemeBtnClick = () => {
+        pubsub.publish("themeBtnClicked");
+    }
 
     getClickedTodosId = clickedElement => {
         const todoItem = clickedElement.closest('.todo-list__todo');
@@ -93,6 +101,10 @@ export default class DomManager {
             }
         })
 
+    }
+
+    changeTheme = theme => {
+        this.body.className = `body body--${theme}`;
     }
 
     renderList = list => {
