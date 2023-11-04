@@ -34,6 +34,7 @@ export default class DomManager {
         this.themeBtn.addEventListener('click', this.handleThemeBtnClick);
     }
 
+
     handleFormSubmit = e => {
         e.preventDefault();
         pubsub.publish("validateInput", this.input.value.trim());
@@ -90,10 +91,7 @@ export default class DomManager {
     }
 
     changeHighlightedFilter = filter => {
-
-        Array.from(this.filterButtons).forEach(button => {
-            button.classList.remove('menu__filter__text--active');
-        });
+        Array.from(this.filterButtons).forEach(button => { button.classList.remove('menu__filter__text--active'); });
 
         Array.from(this.filterButtons).find(button => {
             if (button.classList.contains(`menu__filter__${filter}`)) {
@@ -133,6 +131,7 @@ export default class DomManager {
         const div = document.createElement("div");
         div.classList.add("todo-list__todo");
         div.dataset.id = todo.id;
+        div.setAttribute('draggable', true);
         if (todo.isComplete) {
             div.classList.add("todo-list__todo--checked")
         }
