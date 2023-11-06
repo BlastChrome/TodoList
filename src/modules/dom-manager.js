@@ -86,14 +86,6 @@ export default class DomManager {
         pubsub.publish("themeBtnClicked");
     }
 
-    handleDragOver = () => {
-        console.log(`currently dragging over`);
-    }
-
-    handleDragging = element => {
-        console.log(`being dragged...${element}`);
-    }
-
     getClickedTodosId = clickedElement => {
         const todoItem = clickedElement.closest('.todo-list__todo');
         return todoItem ? todoItem.dataset.id : null;
@@ -136,6 +128,40 @@ export default class DomManager {
         this.items_left.innerText = `${list.length} items left`;
     }
 
+    handleDragStart = el => {
+        el.classList.add('dragging');
+    }
+
+    handleDragEnd = el => {
+        el.classList.remove('dragging');
+    }
+
+    handleDragOver = e => {
+        e.preventDefault();
+        const afterElement = this.getDragAfterElement(e.clientY);
+        const draggable = document.querySelector('.dragging');
+        if (afterElement == null) {
+            this.dom_list.appendChild(draggable);
+        } else {
+            this.dom_list.insertBefore(draggable, afterElement);
+        }
+
+    }
+
+    getDragAfterElement = yPos => {
+        const draggableElements = [...this.dom_list.querySelectorAll('.todo-list__todo:not(.dragging)')];
+
+        return draggableElements.reduce((closets, child) => {
+            const box = child.getBoundingClientRect()
+            const offset = yPos - box.top - box.height / 2;
+            if (offset < 0 && offset > closets.offset) {
+                return { offset: offset, element: child }
+            } else {
+                return closets;
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element
+    }
+
     createTodoElement = todo => {
         const div = document.createElement("div");
         div.classList.add("todo-list__todo");
@@ -156,8 +182,10 @@ export default class DomManager {
         `;
 
         div.addEventListener('dragstart', () => {
-            console.log(div);
-            this.handleDragging(div);
+            this.handleDragStart(div);
+        });
+        div.addEventListener('dragend', () => {
+            this.handleDragEnd(div);
         });
         return div;
     }

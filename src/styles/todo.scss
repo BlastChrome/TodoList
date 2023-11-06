@@ -206,11 +206,15 @@
                 }
             }
 
-
-
             &:hover .todo-list__cross {
                 transform: translate(-136%, 118%) scale(1);
             }
+
+            &.dragging {
+                opacity: 0.5;
+            }
+
+
         }
     }
 
