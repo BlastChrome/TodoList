@@ -2,8 +2,7 @@ import { pubsub } from "../pubsub.js";
 
 export default class SettingsManager {
     constructor() {
-        this.themes = ['light', 'dark'];
-        this.primary_theme = this.themes[0];
+        this.theme = 'light';
         this.subscribe();
     }
 
@@ -12,11 +11,8 @@ export default class SettingsManager {
     }
 
     toggleTheme = () => {
-        if (this.primary_theme == 'light')
-            this.primary_theme = this.themes.find(theme => { return theme == 'dark' })
-        else
-            this.primary_theme = 'light';
-        pubsub.publish("toggleTheme", this.primary_theme);
+        this.theme == 'light' ? this.theme = 'dark' : this.theme = 'light';
+        pubsub.publish("toggleTheme", this.theme);
     }
 
 } 

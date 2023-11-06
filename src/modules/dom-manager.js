@@ -30,6 +30,7 @@ export default class DomManager {
     initEvents = () => {
         this.form.addEventListener('submit', this.handleFormSubmit);
         this.dom_list.addEventListener('click', this.handleTodoClick);
+        this.dom_list.addEventListener('dragover', this.handleDragOver);
         this.filter_menu.addEventListener('click', this.handleFilterClick);
         this.themeBtn.addEventListener('click', this.handleThemeBtnClick);
     }
@@ -85,6 +86,14 @@ export default class DomManager {
         pubsub.publish("themeBtnClicked");
     }
 
+    handleDragOver = () => {
+        console.log(`currently dragging over`);
+    }
+
+    handleDragging = element => {
+        console.log(`being dragged...${element}`);
+    }
+
     getClickedTodosId = clickedElement => {
         const todoItem = clickedElement.closest('.todo-list__todo');
         return todoItem ? todoItem.dataset.id : null;
@@ -130,8 +139,9 @@ export default class DomManager {
     createTodoElement = todo => {
         const div = document.createElement("div");
         div.classList.add("todo-list__todo");
-        div.dataset.id = todo.id;
         div.setAttribute('draggable', true);
+
+        div.dataset.id = todo.id;
         if (todo.isComplete) {
             div.classList.add("todo-list__todo--checked")
         }
@@ -143,8 +153,12 @@ export default class DomManager {
             <span class="checkmark"></span>
         </label>
         <span class="todo-list__cross"></span>
-        `
+        `;
+
+        div.addEventListener('dragstart', () => {
+            console.log(div);
+            this.handleDragging(div);
+        });
         return div;
     }
-
 }
