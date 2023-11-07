@@ -17,7 +17,7 @@ export default class TodoManager {
         pubsub.subscribe("filterActiveClicked", this.filterActive);
         pubsub.subscribe("filterAllClicked", this.filterAll);
         pubsub.subscribe("clearCompletedClicked", this.clearCompleted);
-        pubsub.subscribe("domListUpdated", this.reorderList);
+        pubsub.subscribe("domListUpdated", this.reorderBasedOnDom);
     }
 
     addTodoToList = text => {
@@ -36,12 +36,9 @@ export default class TodoManager {
         this.todo_list.deleteById(id);
     }
 
-    reorderList = idList => {
-        // Create a map from the original list for constant-time look-up
+    reorderBasedOnDom = dom_list => {
         const idToItemMap = new Map(this.todo_list.list.map(item => [item.id, item]));
-        // Build the new list based on the orderedIds
-        const newList = idList.map(id => idToItemMap.get(id));
-
+        const newList = dom_list.map(id => idToItemMap.get(id));
         this.todo_list.reorderList(newList);
     }
 

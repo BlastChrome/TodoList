@@ -47,7 +47,6 @@ export default class DomManager {
         const id = this.getClickedTodosId(clickedElement);
         switch (true) {
             case clickedElement.classList.contains("todo-list__todo-text"):
-                console.log("clicked Text");
                 break;
             case clickedElement.tagName === "INPUT":
                 pubsub.publish("todoCompleteClicked", id);
@@ -56,7 +55,6 @@ export default class DomManager {
                 pubsub.publish("deleteTodoClicked", id);
                 break;
             default:
-                console.log("todo clicked");
         }
     }
 
