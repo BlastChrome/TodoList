@@ -16,6 +16,11 @@ export default class TodoList {
         pubsub.publish("listUpdated", this.list);
     }
 
+    reorderList = newList => {
+        this.list = newList;
+        pubsub.publish("listUpdated", this.list);
+    }
+
     findById = id => {
         return this.list.find(todo => { return todo.id == id; })
     }

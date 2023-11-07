@@ -133,7 +133,10 @@ export default class DomManager {
     }
 
     handleDragEnd = el => {
+        let ids = []
         el.classList.remove('dragging');
+        Array.from(this.dom_list.childNodes).forEach(element => ids.push(element.dataset.id));
+        pubsub.publish("domListUpdated", ids);
     }
 
     handleDragOver = e => {
