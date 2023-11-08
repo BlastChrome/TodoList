@@ -7,6 +7,6 @@ export default class Todo {
     }
 
     toggleComplete = () => {
-        this.isComplete != true ? this.isComplete = true : this.isComplete = false;
+        this.isComplete = !this.isComplete;
     }
 }
