@@ -10,10 +10,10 @@ export default class LocalStorage {
         pubsub.subscribe("loadTodos", this.loadTodos);
     }
 
-    saveTodos = todos => {
+    saveTodos = todoList => {
         try {
-            localStorage.setItem('todos', JSON.stringify(todos));
-            pubsub.publish("todosSaved", todos);
+            localStorage.setItem('todos', JSON.stringify(todoList));
+            pubsub.publish("todosSaved", todoList);
         } catch (e) {
             console.error("Error saving todos:", e);
         }
@@ -21,13 +21,17 @@ export default class LocalStorage {
 
     loadTodos = () => {
         try {
-            const todos = JSON.parse(localStorage.getItem('todos') || '[]');
-            pubsub.publish("todosLoaded", todos);
-            return todos;
+            const todosObject = JSON.parse(localStorage.getItem('todos') || '[]');
+            pubsub.publish("todosLoaded", todosObject);
+            return todosObject;
         } catch (e) {
             console.error("Error loading todos:", e);
             pubsub.publish("todosLoadError", e);
             return [];
         }
+    }
+
+    clearStorage = () => {
+        localStorage.clear();
     }
 }

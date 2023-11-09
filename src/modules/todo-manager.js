@@ -7,6 +7,7 @@ export default class TodoManager {
         this.todo_list = new TodoList();
         this.currentFilter = 'all';
         this.subscribe();
+        // this.loadTodosFromStorage();
     }
 
     subscribe = () => {
@@ -18,16 +19,29 @@ export default class TodoManager {
         pubsub.subscribe("filterAllClicked", this.filterAll);
         pubsub.subscribe("clearCompletedClicked", this.clearCompleted);
         pubsub.subscribe("domListUpdated", this.reorderBasedOnDom);
+        pubsub.subscribe("todosLoaded", this.loadTodosFromStorage)
     }
 
-    addTodoToList = text => {
-        const todo = new Todo(text);
+    addTodoToList = data => {
+        const todo = new Todo(data);
         this.todo_list.addTodo(todo);
         pubsub.publish("todoAdded", todo);
     }
 
+    addLoadedTodo = object => {
+        const todo = new Todo(object);
+        this.todo_list.addTodo(todo);
+        pubsub.publish("todoAdded", todo);
+    }
+
+    loadTodosFromStorage = loadedTodos => {
+        // Use addLoadedTodo which doesn't publish the "todoAdded" event
+        loadedTodos.forEach(todo => this.addLoadedTodo(todo));
+    }
+
     toggleTodoComplete = id => {
         const foundTodo = this.todo_list.findById(id);
+        console.log(foundTodo);
         foundTodo.toggleComplete();
         pubsub.publish("todoUpdated", foundTodo);
     }
@@ -47,6 +61,7 @@ export default class TodoManager {
         if (filteredList.length > 0) {
             this.currentFilter = 'completed';
             pubsub.publish("listUpdated", filteredList);
+            pubsub.publish("saveTodos", filteredList);
             pubsub.publish("filterApplied", this.currentFilter);
             pubsub.publish("filteredLength", filteredList.length);
         }
@@ -57,6 +72,7 @@ export default class TodoManager {
         if (filteredList.length > 0) {
             this.currentFilter = "active";
             pubsub.publish("listUpdated", filteredList);
+            pubsub.publish("saveTodos", filteredList);
             pubsub.publish("filterApplied", this.currentFilter);
         }
     }
@@ -64,12 +80,14 @@ export default class TodoManager {
     filterAll = () => {
         this.currentFilter = 'all';
         pubsub.publish("listUpdated", this.todo_list.filterAll());
+        pubsub.publish("saveTodos", this.todo_list.filterAll());
         pubsub.publish("filterApplied", this.currentFilter);
     }
 
     clearCompleted = () => {
         this.currentFilter = 'all';
         pubsub.publish("listUpdated", this.todo_list.clearCompleted());
+        pubsub.publish("saveTodos", this.todo_list.clearCompleted());
         pubsub.publish("filterApplied", this.currentFilter);
     }
 }
