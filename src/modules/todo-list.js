@@ -26,6 +26,7 @@ export default class TodoList {
     reorderList = newList => {
         this.list = newList;
         pubsub.publish("listUpdated", this.list);
+        pubsub.publish("saveTodos", this.list);
     }
 
 

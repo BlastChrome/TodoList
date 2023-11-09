@@ -44,6 +44,7 @@ export default class TodoManager {
         console.log(foundTodo);
         foundTodo.toggleComplete();
         pubsub.publish("todoUpdated", foundTodo);
+        pubsub.publish("saveTodos", this.todo_list.list);
     }
 
     deleteTodo = id => {
